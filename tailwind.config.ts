@@ -47,6 +47,7 @@ const config: Config = {
       },
       animation: {
         "gradient-x": "gradient-x 6s ease infinite",
+        "spin-slow": "spin 40s linear infinite",
         float: "float 8s ease-in-out infinite",
         "float-slow": "float-slow 11s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",

@@ -6,7 +6,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import BookingForm from "@/components/BookingForm";
-import Location from "@/components/Location";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -43,10 +43,10 @@ export default function Home() {
                 <div className="mt-3 flex items-start gap-3">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-teal-light" />
                   <div className="text-sm text-white/70">
-                    <p>Morning: {DOCTOR.opd.morning}</p>
+                    <p>Afternoon: {DOCTOR.opd.afternoon}</p>
                     <p>Evening: {DOCTOR.opd.evening}</p>
                     <p className="mt-1 text-xs text-white/40">
-                      {DOCTOR.opd.days}
+                      {DOCTOR.opd.days} · {DOCTOR.opd.closed}
                     </p>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ export default function Home() {
                 <div className="mt-3 flex items-start gap-3">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-teal-light" />
                   <p className="text-sm text-white/70">
-                    {DOCTOR.clinicAddress}
+                    {DOCTOR.clinicName}, {DOCTOR.clinicAddress}
                   </p>
                 </div>
               </div>
@@ -75,13 +75,20 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-teal-light" />
                   {DOCTOR.phone}
                 </a>
+                <a
+                  href={`tel:${DOCTOR.landlineRaw}`}
+                  className="mt-2 flex items-center gap-3 text-sm font-medium text-white/70 hover:text-teal-light"
+                >
+                  <Phone className="h-4 w-4 text-teal-light" />
+                  {DOCTOR.landline} (Landline)
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Location />
+      <Contact />
       <Footer />
       <WhatsAppButton />
     </main>

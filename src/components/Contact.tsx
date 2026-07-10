@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, MapPin, Phone, Building2 } from "lucide-react";
+import { Clock, MapPin, Phone, PhoneCall, ScanLine } from "lucide-react";
 import SectionHeader from "./ui/SectionHeader";
 import { DOCTOR } from "@/lib/constants";
 
-export default function Location() {
+export default function Contact() {
   const mapSrc = `https://maps.google.com/maps?q=${DOCTOR.coordinates.lat},${DOCTOR.coordinates.lng}&hl=en&z=15&output=embed`;
 
   return (
-    <section id="location" className="bg-slate-50 py-20 md:py-28">
+    <section id="contact" className="bg-slate-50 py-20 md:py-28">
       <div className="section-container">
         <SectionHeader
           eyebrow="Visit Us"
-          title="Clinic Location"
-          description="Conveniently located in Adhartal, Jabalpur — easy to find and easy to reach."
+          title="Clinic Location & Contact"
+          description="Patle Health Care Center is on Main Road, Adhartal, Jabalpur — easy to find and easy to reach."
         />
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -23,10 +23,10 @@ export default function Location() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 overflow-hidden rounded-2xl shadow-sm ring-1 ring-navy/5"
+            className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-navy/5 lg:col-span-2"
           >
             <iframe
-              title="Clinic location map"
+              title={`${DOCTOR.clinicName} location map`}
               src={mapSrc}
               width="100%"
               height="100%"
@@ -48,20 +48,12 @@ export default function Location() {
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">Clinic Address</p>
+                <p className="text-sm font-semibold text-navy">
+                  {DOCTOR.clinicName}
+                </p>
                 <p className="mt-1 text-sm text-navy/60">
                   {DOCTOR.clinicAddress}
                 </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                <Building2 className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-navy">Hospital</p>
-                <p className="mt-1 text-sm text-navy/60">{DOCTOR.hospital}</p>
               </div>
             </div>
 
@@ -72,12 +64,14 @@ export default function Location() {
               <div>
                 <p className="text-sm font-semibold text-navy">OPD Timings</p>
                 <p className="mt-1 text-sm text-navy/60">
-                  Morning: {DOCTOR.opd.morning}
+                  Afternoon: {DOCTOR.opd.afternoon}
                 </p>
                 <p className="text-sm text-navy/60">
                   Evening: {DOCTOR.opd.evening}
                 </p>
-                <p className="mt-1 text-xs text-navy/40">{DOCTOR.opd.days}</p>
+                <p className="mt-1 text-xs text-navy/40">
+                  {DOCTOR.opd.days} · {DOCTOR.opd.closed}
+                </p>
               </div>
             </div>
 
@@ -86,13 +80,42 @@ export default function Location() {
                 <Phone className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">Contact</p>
+                <p className="text-sm font-semibold text-navy">Mobile</p>
                 <a
                   href={`tel:${DOCTOR.phoneRaw}`}
                   className="mt-1 block text-sm font-medium text-teal hover:underline"
                 >
                   {DOCTOR.phone}
                 </a>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <PhoneCall className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-navy">Landline</p>
+                <a
+                  href={`tel:${DOCTOR.landlineRaw}`}
+                  className="mt-1 block text-sm font-medium text-teal hover:underline"
+                >
+                  {DOCTOR.landline}
+                </a>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <ScanLine className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-navy">
+                  In-house Facilities
+                </p>
+                <p className="mt-1 text-sm text-navy/60">
+                  {DOCTOR.facilities.join(" · ")}
+                </p>
               </div>
             </div>
           </motion.div>

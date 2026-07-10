@@ -17,7 +17,7 @@ export default function Stats() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="text-center"
           >
-            <p className="font-serif text-3xl font-bold text-navy md:text-4xl">
+            <p className="bg-gradient-to-r from-teal to-teal-light bg-clip-text font-serif text-3xl font-bold text-transparent md:text-4xl">
               <AnimatedCounter
                 value={stat.value}
                 suffix={stat.suffix}

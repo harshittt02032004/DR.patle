@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Quote, Star } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Quote } from "lucide-react";
 import SectionHeader from "./ui/SectionHeader";
+import TestimonialCard from "./ui/TestimonialCard";
 import { TESTIMONIALS } from "@/lib/constants";
 
 export default function Testimonials() {
@@ -15,8 +16,6 @@ export default function Testimonials() {
     }, 5500);
     return () => clearInterval(interval);
   }, []);
-
-  const testimonial = TESTIMONIALS[active];
 
   return (
     <section
@@ -35,30 +34,14 @@ export default function Testimonials() {
         />
 
         <div className="mx-auto max-w-2xl">
-          <div className="glass relative rounded-3xl p-8 md:p-10 min-h-[260px] flex flex-col">
+          <div className="glass relative flex min-h-[260px] flex-col rounded-3xl p-8 md:p-10">
             <Quote className="h-9 w-9 text-teal-light/50" />
 
             <AnimatePresence mode="wait">
-              <motion.div
+              <TestimonialCard
                 key={active}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.4 }}
-                className="flex flex-1 flex-col justify-center"
-              >
-                <div className="mb-4 flex gap-1 text-amber-400">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400" strokeWidth={0} />
-                  ))}
-                </div>
-                <p className="text-lg leading-relaxed text-white/85 md:text-xl">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <p className="mt-6 font-serif text-base font-semibold text-teal-light">
-                  {testimonial.name}
-                </p>
-              </motion.div>
+                testimonial={TESTIMONIALS[active]}
+              />
             </AnimatePresence>
           </div>
 

@@ -4,7 +4,7 @@
     {
       "name": "dr-patle-dev",
       "runtimeExecutable": "cmd",
-      "runtimeArgs": ["/c", "set \"PATH=C:\\Program Files\\nodejs;%PATH%\" && cd /d C:\\Users\\HP\\dr-sushil-patle-website && \"C:\\Program Files\\nodejs\\node.exe\" node_modules\\next\\dist\\bin\\next dev"],
+      "runtimeArgs": ["/c", "set PATH=C:\\PROGRA~1\\nodejs;%PATH%&& cd /d C:\\Users\\HP\\dr-sushil-patle-website&& C:\\PROGRA~1\\nodejs\\node.exe node_modules\\next\\dist\\bin\\next dev"],
       "port": 3000
     }
   ]

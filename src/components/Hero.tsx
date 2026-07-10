@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Phone, CalendarCheck, Star, Stethoscope } from "lucide-react";
+import { Phone, CalendarCheck, Star, Clock, BadgeCheck } from "lucide-react";
 import ParticleCanvas from "./ui/ParticleCanvas";
 import { DOCTOR } from "@/lib/constants";
 
@@ -25,6 +26,13 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute top-1/3 right-1/4 h-64 w-64 rounded-full bg-teal-lighter/10 blur-3xl animate-float"
       />
+      {/* orbit ring */}
+      <div
+        aria-hidden="true"
+        className="absolute -right-40 top-1/2 hidden h-[36rem] w-[36rem] -translate-y-1/2 rounded-full border border-teal/15 lg:block animate-spin-slow"
+      >
+        <span className="absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-light/70" />
+      </div>
 
       <div className="section-container relative z-10 grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
         <motion.div
@@ -38,7 +46,7 @@ export default function Hero() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
             </span>
             <span className="text-sm font-medium text-white/90">
-              Now Accepting Appointments
+              Accepting Appointments
             </span>
           </div>
 
@@ -49,11 +57,25 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            {DOCTOR.name}, {DOCTOR.degree}, brings {DOCTOR.experienceYears}+
-            years of orthopaedic expertise to Adhartal — offering joint
-            replacement, trauma care, sports medicine, and rehabilitation
-            under one roof at {DOCTOR.hospital}.
+            {DOCTOR.name}, {DOCTOR.title} at {DOCTOR.clinicName}, Adhartal —
+            offering joint replacement, fracture &amp; trauma care,
+            fellowship-trained rheumatology, and sports medicine, with
+            in-house Digital X-Ray and a dedicated Physiotherapy Centre.
           </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {DOCTOR.qualifications.map((q, i) => (
+              <motion.span
+                key={q}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                className="rounded-full border border-teal/30 bg-teal/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-teal-lighter"
+              >
+                {q}
+              </motion.span>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
@@ -88,8 +110,9 @@ export default function Hero() {
               </span>
             </div>
             <div className="h-4 w-px bg-white/20" />
-            <span className="text-sm font-medium">
-              {DOCTOR.surgeriesCount}+ Surgeries Performed
+            <span className="flex items-center gap-1.5 text-sm font-medium">
+              <BadgeCheck className="h-4 w-4 text-teal-light" />
+              {DOCTOR.registrationShort}
             </span>
           </div>
         </motion.div>
@@ -101,11 +124,15 @@ export default function Hero() {
           className="relative mx-auto w-full max-w-md"
         >
           <div className="glass relative rounded-3xl p-6 shadow-2xl">
-            <div className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-navy-lighter to-navy-light">
-              <Stethoscope className="h-24 w-24 text-teal-light/40" />
-              <span className="absolute bottom-3 text-xs font-medium text-white/40">
-                Doctor Photo
-              </span>
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-navy-lighter to-navy-light">
+              <Image
+                src={DOCTOR.photo}
+                alt={`${DOCTOR.name}, ${DOCTOR.title} at ${DOCTOR.clinicName}, Adhartal, Jabalpur`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 400px"
+                className="object-cover"
+              />
             </div>
 
             <div className="mt-5">
@@ -116,30 +143,44 @@ export default function Hero() {
                 {DOCTOR.title}
               </p>
               <p className="mt-1 text-xs text-white/50">{DOCTOR.degree}</p>
+              <p className="text-xs text-white/50">{DOCTOR.fellowship}</p>
             </div>
 
-            <div className="mt-5 grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
-              <div>
-                <p className="font-serif text-2xl font-bold text-teal-light">
-                  {DOCTOR.experienceYears}+
-                </p>
-                <p className="text-xs text-white/50">Years Experience</p>
+            <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal-light">
+                <Clock className="h-3.5 w-3.5" />
+                OPD Hours · {DOCTOR.opd.days}
+              </p>
+              <div className="mt-2 grid grid-cols-2 gap-2 text-sm text-white/80">
+                <div>
+                  <p className="text-xs text-white/40">Afternoon</p>
+                  <p className="font-medium">{DOCTOR.opd.afternoon}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-white/40">Evening</p>
+                  <p className="font-medium">{DOCTOR.opd.evening}</p>
+                </div>
               </div>
+              <p className="mt-2 text-xs font-medium text-red-400/80">
+                {DOCTOR.opd.closed}
+              </p>
+            </div>
+
+            <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
               <div>
-                <p className="font-serif text-2xl font-bold text-teal-light">
-                  {DOCTOR.surgeriesCount}+
+                <p className="text-xs text-white/40">Google Rating</p>
+                <p className="flex items-center gap-1 font-serif text-lg font-bold text-white">
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  {DOCTOR.rating}/5
                 </p>
-                <p className="text-xs text-white/50">Surgeries Done</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-white/40">Registration</p>
+                <p className="text-sm font-semibold text-teal-light">
+                  {DOCTOR.registrationShort}
+                </p>
               </div>
             </div>
-          </div>
-
-          <div className="glass absolute -left-6 -bottom-6 hidden rounded-2xl px-5 py-3 sm:block">
-            <p className="text-xs text-white/50">Google Rating</p>
-            <p className="flex items-center gap-1 font-serif text-lg font-bold text-white">
-              <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-              {DOCTOR.rating}/5
-            </p>
           </div>
         </motion.div>
       </div>

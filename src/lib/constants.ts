@@ -1,83 +1,108 @@
 export const DOCTOR = {
   name: "Dr. Sushil Kumar Patle",
-  degree: "MBBS, MS (Orthopaedics)",
-  title: "Senior Orthopaedic Surgeon",
+  degree: "M.B.B.S., D.Ortho, M.Ch. Ortho (USAIM)",
+  qualifications: [
+    "M.B.B.S.",
+    "D.Ortho",
+    "M.Ch. Ortho (USAIM)",
+    "Fellowship in Rheumatology",
+  ],
+  fellowship: "Fellowship in Rheumatology",
+  title: "Consultant Orthopaedic Surgeon",
   tagline: "Expert Bone & Joint Care",
-  clinicName: "Dr. Patle's Orthopaedic Clinic",
-  clinicAddress: "Ravindra Nagar, Tapti Nagar, Adhartal, Jabalpur, MP 482004",
-  hospital: "Sanjeevani Hospital & Research Center, Jabalpur",
+  // Swap for /images/doctor.jpg once the real photo arrives
+  photo: "/images/doctor-placeholder.svg",
+  bio: "Dr. Sushil Kumar Patle is a Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal, Jabalpur. Qualified with M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM), and fellowship-trained in Rheumatology, he manages the full spectrum of bone, joint, and arthritis conditions — supported by in-house Digital X-Ray and a dedicated Physiotherapy Centre.",
+  clinicName: "Patle Health Care Center",
+  clinicAddress: "Main Road, Adhartal, Jabalpur, M.P. 482004",
+  landline: "0761-4018137",
+  landlineRaw: "07614018137",
   phone: "+91 93039 44402",
   phoneRaw: "+919303944402",
   whatsappNumber: "919303944402",
+  registration: "MP Medical Council — Reg. No. 4172",
+  registrationShort: "MPMC Reg. No. 4172",
+  hprId: "71-4611-1664-8583",
   opd: {
-    morning: "9:00 AM – 1:00 PM",
-    evening: "5:00 PM – 8:00 PM",
+    afternoon: "12:00 Noon – 4:00 PM",
+    evening: "7:00 PM – 9:00 PM",
     days: "Monday – Saturday",
+    closed: "Sunday Closed",
   },
+  facilities: ["Digital X-Ray", "Physiotherapy Centre"],
   rating: 4.8,
   reviewCount: 9,
-  experienceYears: 15,
-  surgeriesCount: 5000,
   coordinates: {
     lat: 23.198766,
     lng: 79.9466939,
   },
 };
 
+export const WEEK_DAYS = [
+  { label: "Sun", open: false },
+  { label: "Mon", open: true },
+  { label: "Tue", open: true },
+  { label: "Wed", open: true },
+  { label: "Thu", open: true },
+  { label: "Fri", open: true },
+  { label: "Sat", open: true },
+];
+
 export const STATS = [
-  { label: "Years of Experience", value: 15, suffix: "+" },
-  { label: "Successful Surgeries", value: 5000, suffix: "+" },
   { label: "Google Rating", value: 4.8, suffix: "/5", decimals: 1 },
-  { label: "Emergency Support", value: 24, suffix: "/7" },
+  { label: "OPD Days a Week", value: 6, suffix: "" },
+  { label: "Specialised Services", value: 6, suffix: "" },
+  { label: "In-house Facilities", value: 2, suffix: "" },
 ];
 
 export type Service = {
   title: string;
+  tag: string;
   description: string;
   icon: string;
 };
 
 export const SERVICES: Service[] = [
   {
-    title: "Total Knee Replacement",
+    title: "Joint Replacement Surgery",
+    tag: "Knee & Hip",
     description:
-      "Advanced knee replacement surgery to relieve chronic joint pain and restore mobility, tailored to each patient's anatomy and lifestyle.",
+      "Total knee and hip replacement procedures to relieve chronic joint pain and restore mobility, planned around each patient's anatomy and lifestyle.",
     icon: "Bone",
   },
   {
-    title: "Total Hip Replacement",
+    title: "Fracture & Trauma Care",
+    tag: "Emergency & Elective",
     description:
-      "Precision hip replacement procedures aimed at reducing pain and improving range of motion for a more active, independent life.",
-    icon: "Activity",
-  },
-  {
-    title: "Fracture & Trauma Surgery",
-    description:
-      "Comprehensive management of simple to complex fractures and trauma injuries, from emergency stabilization through complete recovery.",
+      "Management of simple to complex fractures and trauma injuries — from initial stabilisation through surgery and complete recovery.",
     icon: "Stethoscope",
   },
   {
-    title: "Sports Medicine (ACL/Meniscus)",
+    title: "Rheumatology & Arthritis",
+    tag: "Fellowship-Trained",
     description:
-      "Specialized care for sports-related injuries including ACL tears and meniscus damage, helping athletes and active individuals return to their routine.",
-    icon: "Zap",
-  },
-  {
-    title: "Arthroscopy (Knee/Shoulder)",
-    description:
-      "Minimally invasive arthroscopic techniques for diagnosing and treating knee and shoulder joint conditions with faster recovery times.",
-    icon: "Microscope",
-  },
-  {
-    title: "Spine Care",
-    description:
-      "Evaluation and management of spinal conditions and back pain using a structured, evidence-based treatment approach.",
+      "Specialised, fellowship-trained evaluation and management of rheumatoid arthritis, osteoarthritis, and other joint and autoimmune conditions.",
     icon: "Shield",
   },
   {
-    title: "Physiotherapy & Rehabilitation",
+    title: "Sports Medicine",
+    tag: "ACL / Ligament / Meniscus",
     description:
-      "Guided post-operative and injury rehabilitation programs designed to support long-term strength, flexibility, and function.",
+      "Care for sports-related injuries including ACL tears, ligament damage, and meniscus injuries — helping active individuals return to their routine.",
+    icon: "Zap",
+  },
+  {
+    title: "Digital X-Ray",
+    tag: "In-House Facility",
+    description:
+      "On-site digital radiography for immediate, high-quality imaging — diagnosis and treatment planning in a single visit, without referrals elsewhere.",
+    icon: "ScanLine",
+  },
+  {
+    title: "Physiotherapy & Rehabilitation",
+    tag: "Dedicated Centre",
+    description:
+      "A dedicated physiotherapy centre for guided post-operative recovery and injury rehabilitation, supporting long-term strength and function.",
     icon: "HeartPulse",
   },
 ];
@@ -92,25 +117,25 @@ export const USPS: USP[] = [
   {
     title: "Qualified Expertise",
     description:
-      "MBBS, MS (Orthopaedics) with over 15 years of dedicated practice in bone and joint care across Jabalpur.",
+      "M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM) — registered with the MP Medical Council (Reg. No. 4172).",
     icon: "GraduationCap",
   },
   {
-    title: "Extensive Experience",
+    title: "Fellowship in Rheumatology",
     description:
-      "5000+ orthopaedic surgeries performed, spanning joint replacements, trauma care, and sports injury management.",
+      "Advanced fellowship training in rheumatology enables specialised care for arthritis and complex joint conditions, beyond standard orthopaedic practice.",
     icon: "Award",
   },
   {
-    title: "Modern Technique",
+    title: "Complete Care Under One Roof",
     description:
-      "Treatment plans informed by current orthopaedic practices, with an emphasis on minimally invasive options where appropriate.",
-    icon: "Sparkles",
+      "Digital X-Ray and a dedicated Physiotherapy Centre at the clinic — diagnosis, treatment, and rehabilitation without running between facilities.",
+    icon: "Building2",
   },
   {
     title: "Patient-First Approach",
     description:
-      "Every treatment plan is discussed clearly with patients and families, focusing on informed decisions and realistic recovery timelines.",
+      "Every treatment plan is explained clearly to patients and families, with a focus on informed decisions and realistic recovery timelines.",
     icon: "Users",
   },
 ];
@@ -144,7 +169,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     name: "Sanjay Verma",
-    text: "Professional and approachable. Appreciated the honest discussion about treatment options for my shoulder issue.",
+    text: "Getting the X-ray done at the same clinic saved a lot of time. Professional and approachable throughout the consultation.",
     rating: 5,
   },
 ];
@@ -155,7 +180,7 @@ export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Book Appointment", href: "#appointment" },
-  { label: "Location", href: "#location" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const APPS_SCRIPT_URL =

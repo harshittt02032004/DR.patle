@@ -22,6 +22,7 @@ export default function ParticleCanvas() {
     let particles: Particle[] = [];
     let width = 0;
     let height = 0;
+    const mouse = { x: -9999, y: -9999 };
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -48,6 +49,23 @@ export default function ParticleCanvas() {
 
       for (const p of particles) {
         if (!prefersReducedMotion) {
+          // gentle repulsion from the cursor
+          const mdx = p.x - mouse.x;
+          const mdy = p.y - mouse.y;
+          const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (mDist < 120 && mDist > 0) {
+            const force = (120 - mDist) / 120;
+            p.vx += (mdx / mDist) * force * 0.6;
+            p.vy += (mdy / mDist) * force * 0.6;
+          }
+
+          // clamp speed so repelled particles settle back down
+          const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+          if (speed > 1.2) {
+            p.vx = (p.vx / speed) * 1.2;
+            p.vy = (p.vy / speed) * 1.2;
+          }
+
           p.x += p.vx;
           p.y += p.vy;
         }
@@ -80,6 +98,21 @@ export default function ParticleCanvas() {
         }
       }
 
+      // lines from cursor to nearby particles
+      for (const p of particles) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 160) {
+          ctx.beginPath();
+          ctx.moveTo(mouse.x, mouse.y);
+          ctx.lineTo(p.x, p.y);
+          ctx.strokeStyle = `rgba(56, 189, 248, ${0.35 * (1 - dist / 160)})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
       animationId = requestAnimationFrame(draw);
     };
 
@@ -91,11 +124,27 @@ export default function ParticleCanvas() {
       resize();
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const handleMouseLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
+
     window.addEventListener("resize", handleResize);
+    // listen on window so the effect works even though overlay content sits above the canvas
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseout", handleMouseLeave);
 
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseout", handleMouseLeave);
     };
   }, []);
 

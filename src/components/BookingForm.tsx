@@ -63,13 +63,28 @@ export default function BookingForm() {
   if (status === "success") {
     return (
       <div className="glass-light flex flex-col items-center justify-center rounded-3xl p-12 text-center">
-        <CheckCircle2 className="h-14 w-14 text-emerald-500" />
+        <motion.div
+          initial={{ scale: 0, rotate: -30 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ type: "spring", stiffness: 260, damping: 18 }}
+        >
+          <CheckCircle2 className="h-14 w-14 text-emerald-500" />
+        </motion.div>
         <h3 className="mt-5 font-serif text-2xl font-bold text-navy">
           Appointment Request Received
         </h3>
         <p className="mt-3 max-w-sm text-sm text-navy/60">
           Thank you! Our clinic team will call you shortly on the number
           provided to confirm your appointment slot.
+        </p>
+        <p className="mt-2 text-sm text-navy/60">
+          Need it faster? Call us directly at{" "}
+          <a
+            href={`tel:${DOCTOR.phoneRaw}`}
+            className="font-semibold text-teal hover:underline"
+          >
+            {DOCTOR.phone}
+          </a>
         </p>
         <button
           type="button"
@@ -112,9 +127,13 @@ export default function BookingForm() {
             required
             type="tel"
             inputMode="numeric"
-            pattern="[0-9+ ]{10,15}"
+            pattern="[0-9]{10}"
+            maxLength={10}
+            title="Please enter a 10-digit mobile number"
             value={form.mobile}
-            onChange={(e) => update("mobile", e.target.value)}
+            onChange={(e) =>
+              update("mobile", e.target.value.replace(/\D/g, "").slice(0, 10))
+            }
             placeholder="10-digit mobile number"
             className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy placeholder:text-navy/35 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
           />
@@ -149,8 +168,8 @@ export default function BookingForm() {
             <option value="" disabled>
               Select a slot
             </option>
-            <option value={`Morning OPD (${DOCTOR.opd.morning})`}>
-              Morning OPD ({DOCTOR.opd.morning})
+            <option value={`Afternoon OPD (${DOCTOR.opd.afternoon})`}>
+              Afternoon OPD ({DOCTOR.opd.afternoon})
             </option>
             <option value={`Evening OPD (${DOCTOR.opd.evening})`}>
               Evening OPD ({DOCTOR.opd.evening})
