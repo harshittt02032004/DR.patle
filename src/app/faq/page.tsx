@@ -43,9 +43,9 @@ const FAQS = [
       "Yes. Patle Health Care Center has a dedicated physiotherapy and rehabilitation centre, used for post-operative recovery, fracture rehabilitation, arthritis exercise programs, and sports injury rehab.",
   },
   {
-    question: "Does Dr. Patle treat arthritis as well as do surgery?",
+    question: "Does Dr. Patle treat arthritis as well as injuries?",
     answer:
-      "Yes. Dr. Patle is an orthopaedic surgeon with an additional Fellowship in Rheumatology, so both the medical management of arthritis and surgical options like joint replacement are available from the same doctor.",
+      "Yes. Dr. Patle is an orthopaedic surgeon with an additional Fellowship in Rheumatology — so your joint problem is seen with both a surgeon's and a physician's eye. Whether the right answer is medication, physiotherapy, or a procedure, the recommendation is based on what the joint needs.",
   },
   {
     question: "Do I need a referral to consult?",

@@ -12,8 +12,8 @@ export default function Services() {
       <div className="section-container">
         <SectionHeader
           eyebrow="What We Treat"
-          title="Comprehensive Orthopaedic Services"
-          description="From joint replacement to arthritis care and rehabilitation — diagnosis, treatment, and recovery under one roof at Patle Health Care Center."
+          title="What We Treat, and How"
+          description="Fractures, arthritis, sports injuries — diagnosed with same-visit X-ray, treated honestly, and rehabilitated at the clinic's own physiotherapy centre."
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

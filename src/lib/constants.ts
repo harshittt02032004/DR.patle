@@ -11,7 +11,7 @@ export const DOCTOR = {
   title: "Consultant Orthopaedic Surgeon",
   tagline: "Expert Bone & Joint Care",
   photo: "/images/doctor.png",
-  bio: "Dr. Sushil Kumar Patle is a Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal, Jabalpur. Qualified with M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM), and fellowship-trained in Rheumatology, he manages the full spectrum of bone, joint, and arthritis conditions — supported by in-house Digital X-Ray and a dedicated Physiotherapy Centre.",
+  bio: "Dr. Sushil Kumar Patle is a Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal, Jabalpur. Trained with an M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM), he also holds a Fellowship in Rheumatology — an uncommon combination that lets him treat both the injuries that need a surgeon and the arthritis that needs a physician. The clinic runs its own digital X-ray and physiotherapy centre, so most patients are diagnosed, treated, and rehabilitated at one address.",
   clinicName: "Patle Health Care Center",
   clinicAddress: "Main Road, Adhartal, Jabalpur, M.P. 482004",
   landline: "0761-4018137",
@@ -50,7 +50,7 @@ export const WEEK_DAYS = [
 export const STATS = [
   { label: "Google Rating", value: 4.8, suffix: "/5", decimals: 1 },
   { label: "OPD Days a Week", value: 6, suffix: "" },
-  { label: "Specialised Services", value: 6, suffix: "" },
+  { label: "Specialised Services", value: 5, suffix: "" },
   { label: "In-house Facilities", value: 2, suffix: "" },
 ];
 
@@ -64,19 +64,11 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    slug: "joint-replacement-surgery",
-    title: "Joint Replacement Surgery",
-    tag: "Knee & Hip",
-    description:
-      "Total knee and hip replacement procedures to relieve chronic joint pain and restore mobility, planned around each patient's anatomy and lifestyle.",
-    icon: "Bone",
-  },
-  {
     slug: "fracture-trauma-care",
     title: "Fracture & Trauma Care",
     tag: "Emergency & Elective",
     description:
-      "Management of simple to complex fractures and trauma injuries — from initial stabilisation through surgery and complete recovery.",
+      "Broken bones and injuries diagnosed and treated in one place — X-ray, plaster, fixation, and follow-up, without running between centres.",
     icon: "Stethoscope",
   },
   {
@@ -84,7 +76,7 @@ export const SERVICES: Service[] = [
     title: "Rheumatology & Arthritis",
     tag: "Fellowship-Trained",
     description:
-      "Specialised, fellowship-trained evaluation and management of rheumatoid arthritis, osteoarthritis, and other joint and autoimmune conditions.",
+      "Joint pain, swelling, and morning stiffness properly diagnosed — rheumatoid arthritis, osteoarthritis, and gout each treated for what they actually are.",
     icon: "Shield",
   },
   {
@@ -92,7 +84,7 @@ export const SERVICES: Service[] = [
     title: "Sports Medicine",
     tag: "ACL / Ligament / Meniscus",
     description:
-      "Care for sports-related injuries including ACL tears, ligament damage, and meniscus injuries — helping active individuals return to their routine.",
+      "Knee and ligament injuries from sport or daily life — assessed precisely, treated honestly, and rehabilitated until you're back on your feet.",
     icon: "Zap",
   },
   {
@@ -100,7 +92,7 @@ export const SERVICES: Service[] = [
     title: "Digital X-Ray",
     tag: "In-House Facility",
     description:
-      "On-site digital radiography for immediate, high-quality imaging — diagnosis and treatment planning in a single visit, without referrals elsewhere.",
+      "X-ray done during your consultation itself. You walk out with a diagnosis and a plan — not a referral slip and a second trip.",
     icon: "ScanLine",
   },
   {
@@ -108,7 +100,7 @@ export const SERVICES: Service[] = [
     title: "Physiotherapy & Rehabilitation",
     tag: "Dedicated Centre",
     description:
-      "A dedicated physiotherapy centre for guided post-operative recovery and injury rehabilitation, supporting long-term strength and function.",
+      "A physiotherapy centre inside the clinic — recovery after fractures and injuries, guided by the same team that treats you.",
     icon: "HeartPulse",
   },
 ];

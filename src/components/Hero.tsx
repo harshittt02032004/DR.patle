@@ -57,10 +57,10 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-            {DOCTOR.name}, {DOCTOR.title} at {DOCTOR.clinicName}, Adhartal —
-            offering joint replacement, fracture &amp; trauma care,
-            fellowship-trained rheumatology, and sports medicine, with
-            in-house Digital X-Ray and a dedicated Physiotherapy Centre.
+            Fractures set right with same-visit X-ray. Arthritis diagnosed
+            properly, not just medicated. Sports injuries rehabilitated until
+            you trust the joint again. {DOCTOR.name} treats bone and joint
+            problems end-to-end at {DOCTOR.clinicName}, Adhartal.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">

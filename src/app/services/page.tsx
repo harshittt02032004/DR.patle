@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: `Orthopaedic Services in Jabalpur | ${DOCTOR.clinicName}`,
-  description: `Orthopaedic services at ${DOCTOR.clinicName}, Adhartal, Jabalpur — joint replacement, fracture & trauma care, rheumatology & arthritis, sports medicine, digital X-ray, and physiotherapy by ${DOCTOR.name}.`,
+  description: `Orthopaedic services at ${DOCTOR.clinicName}, Adhartal, Jabalpur — fracture & trauma treatment, arthritis & rheumatology care, sports injury treatment, digital X-ray, and physiotherapy by ${DOCTOR.name}.`,
   alternates: { canonical: `${SITE_URL}/services` },
 };
 
@@ -33,8 +33,8 @@ export default function ServicesPage() {
       />
       <Navbar />
       <PageHero
-        title="Comprehensive Orthopaedic Services"
-        tagline="From joint replacement to arthritis care and rehabilitation — diagnosis, treatment, and recovery under one roof at Patle Health Care Center."
+        title="Orthopaedic Services"
+        tagline="Five things we do, done properly — fracture care, arthritis treatment, sports injury care, X-ray, and rehabilitation, all at one clinic in Adhartal."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 

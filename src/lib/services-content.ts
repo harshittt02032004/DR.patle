@@ -20,408 +20,364 @@ export type ServiceContent = {
 
 export const SERVICES_CONTENT: ServiceContent[] = [
   {
-    slug: "joint-replacement-surgery",
-    title: "Joint Replacement Surgery",
-    metaTitle: "Knee & Hip Replacement Surgery in Jabalpur",
-    metaDescription:
-      "Total knee and hip replacement surgery in Jabalpur by Dr. Sushil Kumar Patle, Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal. Evaluation, surgery planning, and in-house physiotherapy under one roof.",
-    heroTagline:
-      "Total knee and hip replacement, planned around your anatomy, lifestyle, and recovery goals.",
-    overview: [
-      "When a knee or hip joint is severely damaged by arthritis, injury, or age-related wear, everyday movements — walking, climbing stairs, even standing up from a chair — can become painful. Joint replacement surgery replaces the damaged joint surfaces with carefully sized implants, aiming to relieve pain and restore movement.",
-      "At Patle Health Care Center, Dr. Sushil Kumar Patle evaluates every patient individually. Surgery is never the first suggestion — many patients are first managed with medication review, physiotherapy, and lifestyle changes. When replacement is the right option, the procedure is planned in detail, and rehabilitation begins at our in-house physiotherapy centre.",
-    ],
-    whenToConsultTitle: "When to Consider a Joint Replacement Consultation",
-    whenToConsult: [
-      "Knee or hip pain that persists despite medicines and physiotherapy",
-      "Pain that disturbs your sleep or limits walking distance",
-      "Stiffness that makes stairs, sitting cross-legged, or squatting difficult",
-      "Visible deformity or progressive bowing of the leg",
-      "X-ray findings of advanced arthritis with day-to-day limitation",
-    ],
-    whatWeOfferTitle: "Our Joint Replacement Care Includes",
-    whatWeOffer: [
-      {
-        title: "Detailed Pre-Surgical Evaluation",
-        description:
-          "Clinical examination, in-house digital X-ray, and a frank discussion about whether surgery is truly needed — and what results you can realistically expect.",
-      },
-      {
-        title: "Total Knee Replacement",
-        description:
-          "Replacement of damaged knee joint surfaces with implants sized and aligned to your anatomy, addressing pain from advanced osteoarthritis and inflammatory arthritis.",
-      },
-      {
-        title: "Total Hip Replacement",
-        description:
-          "Replacement of the hip's ball-and-socket joint for advanced arthritis, avascular necrosis, and select fracture cases in suitable patients.",
-      },
-      {
-        title: "Structured Rehabilitation",
-        description:
-          "A staged physiotherapy program at our dedicated in-house centre — from first steps after surgery to regaining independent daily activity.",
-      },
-    ],
-    recoveryNote:
-      "Most patients begin walking with support within a day or two of surgery, progressing through a guided physiotherapy program over the following weeks. Recovery timelines vary from patient to patient depending on age, general health, and the joint involved — Dr. Patle discusses a realistic, personalised plan before surgery.",
-    faqs: [
-      {
-        question: "Is joint replacement the only option for knee or hip arthritis?",
-        answer:
-          "No. Many patients with early or moderate arthritis are managed without surgery — through physiotherapy, activity modification, and medication prescribed after evaluation. Replacement is considered when pain and limitation persist despite these measures and imaging shows advanced joint damage.",
-      },
-      {
-        question: "How long do joint implants last?",
-        answer:
-          "Modern implants generally function well for many years, though longevity varies with age, activity level, bone quality, and adherence to follow-up care. Dr. Patle discusses implant options and what is reasonable to expect in your specific case during consultation.",
-      },
-      {
-        question: "How soon can I walk after knee or hip replacement?",
-        answer:
-          "Most patients stand and take assisted steps within 24–48 hours of surgery as part of a supervised protocol. Independent walking typically returns progressively over the following weeks with physiotherapy.",
-      },
-      {
-        question: "Do I need to travel elsewhere for physiotherapy after surgery?",
-        answer:
-          "No. Patle Health Care Center has a dedicated in-house physiotherapy and rehabilitation centre, so your post-operative program continues at the same clinic where you consult.",
-      },
-    ],
-  },
-  {
     slug: "fracture-trauma-care",
     title: "Fracture & Trauma Care",
-    metaTitle: "Fracture & Trauma Treatment in Jabalpur",
+    metaTitle: "Fracture Treatment in Jabalpur — Bone Injury & Trauma Care",
     metaDescription:
-      "Fracture and trauma care in Jabalpur by Dr. Sushil Kumar Patle at Patle Health Care Center, Adhartal — immediate assessment with in-house digital X-ray, plaster and surgical fixation, and guided recovery.",
+      "Broken bone? Get fracture treatment in Jabalpur at Patle Health Care Center, Adhartal. Dr. Sushil Kumar Patle — X-ray, diagnosis, plaster or surgery, and follow-up at one clinic. OPD Mon–Sat.",
     heroTagline:
-      "From immediate assessment to full recovery — complete fracture care with in-house digital X-ray.",
+      "X-ray, diagnosis, and treatment in the same visit — because a broken bone shouldn't mean three trips to three places.",
     overview: [
-      "A fracture needs two things quickly: an accurate diagnosis and the right treatment decision. At Patle Health Care Center, both happen under one roof — in-house digital X-ray means your injury is imaged and assessed in the same visit, without running between centres.",
-      "Dr. Sushil Kumar Patle manages the full range of bone and joint injuries — from simple fractures treated with casting to complex injuries requiring surgical fixation. Every treatment plan considers the patient's age, bone quality, occupation, and activity needs, followed by structured rehabilitation to restore strength and function.",
+      "A fall from a two-wheeler on Narmada Road. A child who landed badly on the playground. An elderly parent who slipped in the bathroom. Most fractures we see at the clinic start as ordinary moments — and the first few hours after them are full of confusion. Is it broken or just sprained? Do we need a plaster? Where do we even get an X-ray at this hour?",
+      "This is exactly why fracture care at Patle Health Care Center works the way it does. The X-ray machine is inside the clinic, not across town. Dr. Patle examines the injury, images it on the spot, shows you the film, and explains what he sees — in plain words, not radiology jargon. If it's a crack that will heal in plaster, you leave with the plaster on. If the bone is displaced and needs fixing, you leave knowing exactly what the operation involves, why it's needed, and what the alternative would mean.",
+      "Over years of orthopaedic practice in Jabalpur, one lesson repeats itself: fractures treated correctly in the first week heal predictably; fractures neglected or treated casually become the stiff wrists, crooked forearms, and painful ankles we see months later. Getting it right early is most of the battle.",
     ],
-    whenToConsultTitle: "Seek Prompt Orthopaedic Care If You Have",
+    whenToConsultTitle: "Come In Promptly If You Notice",
     whenToConsult: [
-      "Severe pain, swelling, or deformity after a fall or accident",
-      "Inability to bear weight or move a limb normally",
-      "A wound over a suspected fracture site",
-      "Persistent pain weeks after an injury that 'should have healed'",
-      "An old fracture that seems to have healed in a wrong position",
+      "Swelling and pain after a fall that doesn't ease within a few hours",
+      "A limb that looks bent, shortened, or simply 'not right'",
+      "Inability to put weight on a leg, or to grip and lift with an arm",
+      "A snap or crack you heard or felt at the moment of injury",
+      "Pain from an old injury that never fully settled — bones do sometimes heal in the wrong position, and this can often still be addressed",
+      "Any injury in an elderly person after a fall, even a seemingly minor one — hip and wrist fractures in older adults are easy to miss and costly to ignore",
     ],
-    whatWeOfferTitle: "Our Fracture & Trauma Services",
+    whatWeOfferTitle: "How We Treat Fractures Here",
     whatWeOffer: [
       {
-        title: "Immediate Assessment & Digital X-Ray",
+        title: "Same-Visit X-Ray & Diagnosis",
         description:
-          "Same-visit imaging and diagnosis at the clinic, so treatment decisions are made without delay.",
+          "The digital X-ray is taken during your consultation and read by Dr. Patle with the injury in front of him — not reported remotely by someone who never examined you.",
       },
       {
-        title: "Conservative Fracture Management",
+        title: "Plaster & Non-Surgical Treatment",
         description:
-          "Closed reduction, casting, and splinting for fractures that can heal well without surgery — with scheduled X-ray follow-up to confirm healing.",
+          "Many fractures heal well in a properly applied cast. We reduce the bone if needed, apply the plaster, and schedule X-ray checks to confirm the bone is staying where it should.",
       },
       {
-        title: "Surgical Fracture Fixation",
+        title: "Surgery When It's Genuinely Needed",
         description:
-          "Operative stabilisation using plates, screws, nails, or wires for displaced and unstable fractures, performed with modern fixation techniques.",
+          "Displaced and unstable fractures are fixed with plates, screws, nails, or wires. You'll always hear why surgery is being advised — and what happens if you choose to wait.",
       },
       {
-        title: "Post-Fracture Rehabilitation",
+        title: "Rehabilitation After the Bone Heals",
         description:
-          "Guided physiotherapy at our in-house centre to restore joint movement, muscle strength, and confidence after immobilisation.",
+          "A healed bone with a stiff joint is only half a recovery. Once the fracture unites, our in-house physiotherapy centre works on the movement and strength the plaster took away.",
       },
     ],
     recoveryNote:
-      "Bone healing typically takes 6–12 weeks depending on the bone involved, the type of fracture, and individual factors like age and bone health. Regular follow-up X-rays at the clinic track healing progress, and physiotherapy begins at the right stage to prevent stiffness.",
+      "Most fractures take 6 to 12 weeks to unite — faster in children, slower in older adults and in bones with poor blood supply. What you do during those weeks matters: keeping follow-up appointments, not removing the plaster early, and starting physiotherapy at the right time all decide whether the X-ray at three months shows a success story. We schedule these checkpoints for you rather than leaving you to guess.",
     faqs: [
       {
-        question: "Do all fractures need surgery?",
+        question: "How do I know if it's a fracture or just a sprain?",
         answer:
-          "No. Many fractures heal well with casting or splinting alone. Surgery is recommended when a fracture is displaced, unstable, involves a joint surface, or would heal poorly without fixation. The decision is made after clinical examination and X-ray assessment.",
+          "Honestly — you often can't tell from outside, and neither can we without an X-ray. Severe sprains can hurt more than small fractures. The reliable signs pointing toward a fracture are deformity, inability to bear weight, and bony tenderness at one specific spot. Since the X-ray happens during your consultation here, the question gets answered in minutes rather than days.",
       },
       {
-        question: "Can I get an X-ray at the clinic itself?",
+        question: "Does every broken bone need an operation?",
         answer:
-          "Yes. Patle Health Care Center has an in-house digital X-ray facility, so imaging, diagnosis, and the treatment plan happen in the same visit.",
+          "No — and a good orthopaedic surgeon operates on the fracture, not on the X-ray. Undisplaced and stable fractures usually heal in plaster. Surgery earns its place when the bone is displaced, the fracture involves a joint surface, or the pattern is one we know behaves badly in a cast. In OPD, you'll see your own X-ray and understand which category your injury falls in.",
       },
       {
-        question: "How long does a fracture take to heal?",
+        question: "My fracture was treated months ago but still hurts. Is that normal?",
         answer:
-          "Most fractures heal in 6–12 weeks, but the timeline varies with the bone involved, fracture pattern, age, and overall health. Follow-up X-rays confirm that healing is progressing as expected.",
+          "Some aching during the first months is common, but pain that persists, worsens, or comes with deformity deserves a fresh look. Possible causes include delayed healing, a bone that united in poor alignment, or joint stiffness from the immobilisation itself. Bring your old X-rays and reports — comparing them with a current film usually explains the story quickly.",
       },
       {
-        question: "What should I do immediately after an injury?",
+        question: "What should we do at home right after an injury, before reaching the clinic?",
         answer:
-          "Avoid putting weight on the injured limb, apply ice wrapped in cloth, keep the limb elevated and supported, and seek orthopaedic assessment promptly. If there is a wound, severe deformity, or the patient cannot be moved safely, go to the nearest emergency facility first.",
+          "Keep the limb still — a folded newspaper or a piece of cardboard tied gently alongside works as a temporary splint. Apply ice wrapped in cloth, keep the limb raised, and avoid letting the person walk on a painful leg. Don't massage the area or pull on the limb to 'set' it. If there's a wound over the injury, heavy bleeding, or the person can't be moved safely, go straight to an emergency hospital first.",
+      },
+      {
+        question: "Do you treat children's fractures?",
+        answer:
+          "Yes. Children's bones are growing and behave differently from adult bones — they bend, buckle, and heal fast, but injuries near growth plates need careful handling because they can affect how the bone grows. Children's fractures are a regular part of practice at the clinic.",
       },
     ],
   },
   {
     slug: "rheumatology-arthritis",
     title: "Rheumatology & Arthritis Care",
-    metaTitle: "Arthritis & Rheumatology Treatment in Jabalpur",
+    metaTitle: "Arthritis Doctor in Jabalpur — Joint Pain & Rheumatology Clinic",
     metaDescription:
-      "Fellowship-trained rheumatology and arthritis care in Jabalpur. Dr. Sushil Kumar Patle at Patle Health Care Center, Adhartal treats rheumatoid arthritis, osteoarthritis, and joint pain with structured, evidence-based plans.",
+      "Joint pain, swelling, or morning stiffness? Consult Dr. Sushil Kumar Patle in Jabalpur — orthopaedic surgeon with Fellowship in Rheumatology. Diagnosis and treatment of rheumatoid arthritis, osteoarthritis & gout at Adhartal.",
     heroTagline:
-      "Fellowship-trained care for rheumatoid arthritis, osteoarthritis, and complex joint conditions.",
+      "Not all joint pain is the same disease. Getting the diagnosis right is the treatment.",
     overview: [
-      "Arthritis is not one disease — it is a family of conditions with very different causes and treatments. Osteoarthritis from joint wear, rheumatoid arthritis from immune-system activity, gout from crystal deposits — each needs a different approach, and treating the wrong one wastes precious time.",
-      "Dr. Sushil Kumar Patle holds a Fellowship in Rheumatology in addition to his orthopaedic surgical training — a combination that allows both accurate diagnosis of the type of arthritis and access to the full range of treatment, from medical management to joint replacement when a joint is beyond preservation.",
+      "A forty-year-old woman whose fingers are swollen and stiff every morning. A sixty-five-year-old farmer whose knees grind when he climbs stairs. A young man who wakes at 3 a.m. with a big toe so painful he can't bear the bedsheet touching it. All three will tell you the same thing — \"mujhe arthritis hai\" — and all three have completely different diseases needing completely different treatment.",
+      "That first patient likely has rheumatoid arthritis, an immune-system disease that will quietly damage her joints for years if she's only given painkillers. The farmer has osteoarthritis — mechanical wear that needs strengthening, weight management, and sensible activity far more than tablets. The young man has gout, which is controllable to the point of being a non-issue, but only if treated as gout. Give all three the same pain medicine and one improves, one stays the same, and one gets steadily worse.",
+      "This is why Dr. Patle's Fellowship in Rheumatology matters to you as a patient. At Patle Health Care Center in Adhartal, joint pain is not waved off with a strip of painkillers. It's examined, imaged on the in-house X-ray when needed, investigated with the right blood tests, and named. Once the disease has a name, it has a plan — and most arthritis, treated early and correctly, allows a normal working life.",
     ],
-    whenToConsultTitle: "Consult for Arthritis Evaluation If You Notice",
+    whenToConsultTitle: "Joint Symptoms That Deserve a Proper Diagnosis",
     whenToConsult: [
-      "Joint pain or swelling lasting more than a few weeks",
-      "Morning stiffness that takes more than 30 minutes to ease",
-      "Pain or swelling in multiple joints, especially both hands or feet",
-      "Joint pain with fatigue, low-grade fever, or unexplained weight loss",
-      "Repeated sudden, severe attacks of pain in the big toe or other joints",
+      "Morning stiffness in the hands or feet that takes more than half an hour to loosen",
+      "Swelling in the same joints on both sides of the body — both wrists, both knees, knuckles of both hands",
+      "Knee pain that's worse on stairs, after sitting cross-legged, or at the end of a working day",
+      "Sudden, severe attacks of pain in the big toe, ankle, or knee that come and go",
+      "Joint pain alongside tiredness, low-grade fever, skin rashes, or unexplained weight loss",
+      "A family history of rheumatoid arthritis or other autoimmune disease with your own joints now hurting",
     ],
-    whatWeOfferTitle: "Our Rheumatology & Arthritis Services",
+    whatWeOfferTitle: "What Arthritis Care at This Clinic Involves",
     whatWeOffer: [
       {
-        title: "Accurate Diagnosis",
+        title: "Naming the Disease First",
         description:
-          "Clinical evaluation supported by in-house X-ray and appropriate laboratory testing to identify which type of arthritis is causing your symptoms.",
+          "History, joint examination, in-house X-ray, and targeted blood work — arranged in one systematic pass, so treatment starts from a diagnosis rather than a guess.",
       },
       {
-        title: "Structured Medical Management",
+        title: "Treatment That Matches the Diagnosis",
         description:
-          "Evidence-based, individually prescribed treatment plans with scheduled monitoring and dose review — aimed at controlling disease activity and protecting joints.",
+          "Rheumatoid arthritis needs disease-controlling medication with monitoring. Osteoarthritis needs load management and muscle strengthening. Gout needs urate control. Each is a different plan, prescribed and reviewed personally.",
       },
       {
-        title: "Joint Care & Injection Procedures",
+        title: "Regular Monitoring, Not One-Time Prescriptions",
         description:
-          "Selected joint procedures where clinically appropriate, performed after discussion of benefits and alternatives.",
+          "Inflammatory arthritis medicines work well but must be watched — doses adjusted, blood tests repeated, side effects caught early. Follow-up is built into the plan, with OPD six days a week making it practical.",
       },
       {
-        title: "Continuity Into Surgical Care",
+        title: "Physiotherapy That Protects Joints",
         description:
-          "If a joint is damaged beyond preservation, the same doctor who manages your arthritis can plan and perform joint replacement — no fragmented care.",
+          "Our in-house physiotherapy centre teaches joint-protection techniques and builds the muscle support that takes daily load off painful joints — often the difference between managing well and declining.",
       },
     ],
     recoveryNote:
-      "Arthritis care is a partnership over time, not a single visit. Most inflammatory arthritis patients need periodic reviews to fine-tune treatment and monitor for side effects — our OPD structure makes regular follow-up simple.",
+      "Arthritis care is a relationship, not a transaction. The patients who do best are the ones whose treatment is reviewed and adjusted over months — medication fine-tuned, exercises progressed, flare-ups caught early. What we can honestly promise is a correct diagnosis, a treatment plan with reasons behind it, and a doctor who tracks your progress rather than restarting from zero each visit.",
     faqs: [
       {
-        question: "What is the difference between osteoarthritis and rheumatoid arthritis?",
+        question: "How is rheumatoid arthritis different from ordinary joint wear?",
         answer:
-          "Osteoarthritis is age- and wear-related damage to joint cartilage, usually affecting knees, hips, and spine. Rheumatoid arthritis is an autoimmune condition where the body's immune system attacks joint linings, often affecting hands and feet on both sides. They require very different treatments, which is why accurate diagnosis matters.",
+          "Osteoarthritis is mechanical — cartilage wearing down with age and load, usually in knees, hips, and spine, worse with activity. Rheumatoid arthritis is your immune system attacking the joint lining — it prefers the small joints of hands and feet, strikes both sides symmetrically, and is worst in the morning. The distinction isn't academic: rheumatoid arthritis untreated causes permanent joint destruction, and its medicines are completely different from pain relief.",
       },
       {
-        question: "Why see a fellowship-trained doctor for arthritis?",
+        question: "Why should I see a doctor with rheumatology training instead of taking painkillers from the chemist?",
         answer:
-          "Fellowship training in rheumatology adds focused expertise in diagnosing and medically managing inflammatory joint diseases — beyond standard orthopaedic training. Combined with surgical capability, it means your care doesn't need to be split between multiple specialists.",
+          "Painkillers hide the pain while inflammatory arthritis continues damaging the joint underneath — patients often arrive years into the disease with deformities that could have been prevented. A rheumatology-trained doctor identifies which arthritis you have and treats the disease itself, not just its loudest symptom. Early diagnosis is genuinely the single biggest factor in long-term outcome.",
       },
       {
-        question: "Can arthritis be cured?",
+        question: "Which blood tests are needed for arthritis?",
         answer:
-          "Most forms of arthritis are managed rather than cured. With accurate diagnosis and a structured treatment plan, the majority of patients achieve good control of pain and disease activity, protecting their joints and quality of life. Early evaluation improves the outlook considerably.",
+          "It depends on what the examination suggests — commonly ESR and CRP for inflammation, RA factor and anti-CCP when rheumatoid arthritis is suspected, and uric acid for gout. Tests are ordered to answer specific questions, not as a fixed panel, and Dr. Patle explains what each result means for your treatment.",
       },
       {
-        question: "Do I need to stop all activity if I have arthritis?",
+        question: "Is lifelong medicine unavoidable?",
         answer:
-          "Usually the opposite — appropriate, guided activity protects joints and maintains muscle strength. Our in-house physiotherapy centre designs exercise programs suited to your condition and stage.",
+          "Not always, but honesty matters here: rheumatoid arthritis usually needs long-term medication to stay in remission, the way blood pressure or diabetes does. Doses are often reduced once the disease is quiet. Gout can frequently be controlled to the point where attacks simply stop. Osteoarthritis may need little or no regular medicine at all if strengthening and weight management go well.",
+      },
+      {
+        question: "Can diet really affect my joint pain?",
+        answer:
+          "For gout, yes directly — alcohol, red meat, and certain foods provoke attacks in many patients. For other arthritis, diet's biggest role is body weight: every extra kilogram adds roughly four kilograms of load across the knee with each step. No specific food cures arthritis, and we'd encourage skepticism toward anyone who claims otherwise.",
       },
     ],
   },
   {
     slug: "sports-medicine",
     title: "Sports Medicine",
-    metaTitle: "Sports Injury & ACL Treatment in Jabalpur",
+    metaTitle: "ACL & Sports Injury Treatment in Jabalpur — Knee Ligament Clinic",
     metaDescription:
-      "Sports injury care in Jabalpur — ACL tears, ligament injuries, and meniscus damage treated by Dr. Sushil Kumar Patle at Patle Health Care Center, Adhartal, with structured rehabilitation for return to sport.",
+      "ACL tear, meniscus injury, or recurring ankle sprain? Sports injury treatment in Jabalpur by Dr. Sushil Kumar Patle at Patle Health Care Center, Adhartal — precise diagnosis, honest advice on surgery, structured rehab.",
     heroTagline:
-      "ACL, ligament, and meniscus injury care — helping active people return to what they love.",
+      "The knee that 'gave way' on the field deserves more than rest and a crepe bandage.",
     overview: [
-      "Sports injuries don't only happen to professional athletes. A twisted knee on the badminton court, a ligament tear during football, a shoulder injury at the gym — these are everyday injuries for active people in Jabalpur, and they deserve treatment that aims for full return to activity, not just pain relief.",
-      "Dr. Sushil Kumar Patle evaluates sports injuries with a focus on precise diagnosis: which structure is injured, how severely, and what treatment gives you the best chance of returning to your sport or activity. Treatment ranges from structured rehabilitation for partial injuries to surgical reconstruction for complete ligament tears.",
+      "It usually happens in a split second. A footballer plants his foot and turns, feels a pop inside the knee, and is helped off the ground. A badminton player lunges and her ankle rolls. A gym-goer feels something tear in his shoulder mid-lift. What happens in the following two weeks — not the injury itself — often decides whether they return to sport or join the crowd of people whose knee 'has never been the same since'.",
+      "The most common mistake we see in Jabalpur is the injury that was never diagnosed. The swelling went down with rest and a bandage, so everyone assumed it healed. But an ACL doesn't reattach itself, and a torn meniscus doesn't fill back in — the knee works fine on straight-line walking and then betrays you on the first twist. Six months later the patient arrives with a knee that buckles unpredictably, and sometimes with new cartilage damage caused by all those small givings-way.",
+      "Sports injury care at Patle Health Care Center starts with a precise answer to one question: exactly which structure is damaged, and how badly? From there the advice is honest. Not every ACL tear needs reconstruction. Not every meniscus tear needs an operation. But every significant injury needs a decision made with full information — and a rehabilitation plan that ends with your knee trusted again, not just quiet.",
     ],
-    whenToConsultTitle: "Common Injuries We Evaluate and Treat",
+    whenToConsultTitle: "Injury Patterns Worth Taking Seriously",
     whenToConsult: [
-      "A 'pop' felt in the knee during twisting, followed by swelling — a classic ACL injury pattern",
-      "Knee locking, catching, or giving way — often meniscus-related",
-      "Ligament sprains of the knee and ankle that keep recurring",
-      "Shoulder pain or instability after a fall or overhead activity",
-      "Muscle and tendon injuries that fail to settle with rest",
+      "A 'pop' felt or heard in the knee during a twist, with swelling within a few hours — the classic ACL story",
+      "A knee that locks, catches, or clicks painfully — often a meniscus tear mechanically blocking the joint",
+      "A knee or ankle that keeps 'giving way' months after an old injury",
+      "An ankle that has been sprained three, four, five times — recurrent sprains mean the ligaments never regained stability",
+      "Shoulder pain with overhead activity, or a shoulder that has dislocated even once",
+      "Any sporting injury where you're unsure whether to play again — checking costs one OPD visit; playing on a damaged joint can cost a season or a career",
     ],
-    whatWeOfferTitle: "Our Sports Medicine Services",
+    whatWeOfferTitle: "How We Approach Sports Injuries",
     whatWeOffer: [
       {
-        title: "Precise Injury Assessment",
+        title: "Structure-by-Structure Diagnosis",
         description:
-          "Focused clinical testing supported by imaging to identify exactly which ligament, meniscus, or tendon is injured and how severely.",
+          "Specific clinical tests for each ligament and meniscus, X-ray in-house to rule out bony injury, and MRI advised when it will genuinely change the decision — not as a reflex.",
       },
       {
-        title: "ACL & Ligament Injury Management",
+        title: "Honest Surgery Advice",
         description:
-          "Treatment matched to your injury and activity goals — structured rehabilitation for suitable partial injuries, surgical reconstruction for complete tears in active patients.",
+          "A desk worker with a partial tear and a stable knee gets a different recommendation than a 22-year-old district-level footballer with a complete ACL rupture. The advice fits your injury and your life, and both options are explained with their real trade-offs.",
       },
       {
-        title: "Meniscus Injury Care",
+        title: "Meniscus-Preserving Philosophy",
         description:
-          "Management of meniscus tears based on tear pattern, symptoms, and age — preserving healthy meniscus tissue wherever possible.",
+          "The meniscus is the knee's shock absorber, and removing it carelessly buys arthritis a decade early. Where the tear pattern allows, treatment aims to preserve or respect it rather than sacrifice it.",
       },
       {
-        title: "Return-to-Sport Rehabilitation",
+        title: "Rehab That Ends at 'Match-Fit', Not 'Pain-Free'",
         description:
-          "Progressive, criteria-based physiotherapy at our in-house centre — rebuilding strength, balance, and confidence before you return to the field.",
+          "At our in-house physiotherapy centre, return to sport is earned through stages — range, strength, balance, sport-specific movement — with progression decided by what your leg can do, not by dates on a calendar.",
       },
     ],
     recoveryNote:
-      "Return-to-sport timelines depend on the injury and treatment — recurring sprains may need weeks of focused rehabilitation, while ACL reconstruction typically involves a progressive program over several months. The goal is returning safely, with the strength and control to avoid re-injury.",
+      "Recovery time depends entirely on the injury: a first ankle sprain may need three focused weeks; an ACL reconstruction is a several-month project where the surgery is honestly the easy part. The number that matters more than weeks is strength symmetry — how close the injured leg is to the healthy one. Returning before roughly nine-tenths symmetry is how re-injuries happen, and we'll tell you plainly when you're there and when you're not.",
     faqs: [
       {
-        question: "Does every ACL tear need surgery?",
+        question: "I heard a pop in my knee but I can walk fine now. Do I still need to get it checked?",
         answer:
-          "No. The decision depends on the completeness of the tear, your age, activity level, and whether the knee remains unstable. Recreationally active patients with partial injuries may do well with structured rehabilitation; complete tears in patients who play pivoting sports usually benefit from reconstruction. Dr. Patle discusses both paths honestly.",
+          "Yes — and this exact situation is why. A completely torn ACL often allows comfortable straight-line walking once swelling settles; the instability only shows up on turning, pivoting, or uneven ground. Walking normally tells you very little about ligament status. A clinical examination settles the question quickly, and catching it now prevents the cartilage damage that repeated giving-way causes later.",
       },
       {
-        question: "How do I know if my knee injury is serious?",
+        question: "Can an ACL tear heal with rest and exercise alone?",
         answer:
-          "Warning signs include a popping sensation at injury, rapid swelling within hours, inability to bear weight, locking, or a feeling that the knee will give way. Any of these deserves orthopaedic evaluation rather than waiting it out.",
+          "A fully torn ACL does not grow back together — that's biology, not opinion. What rehabilitation can do is train the muscles around the knee to compensate, which works well for people with partial tears or less rotationally demanding lives. For those who play pivoting sports or have knees that give way despite good rehab, reconstruction is the reliable option. Which camp you fall into is exactly what the consultation determines.",
       },
       {
-        question: "How long after an ACL reconstruction can I play sports again?",
+        question: "How soon after injury should I come in?",
         answer:
-          "Most athletes progress through a staged rehabilitation program lasting several months, with return to pivoting sports decided by strength and stability criteria rather than the calendar alone. Rushing back early is the most common cause of re-injury.",
+          "Ideally within the first few days. Early on we can settle swelling correctly, splint if needed, and plan examination when the knee allows it. But late is genuinely better than never — even injuries from years ago can be assessed and usually improved, whether by rehabilitation or surgery.",
       },
       {
-        question: "Can older or non-athletic patients benefit from sports medicine care?",
+        question: "Do you only treat athletes?",
         answer:
-          "Absolutely. The same structured approach — precise diagnosis, targeted rehabilitation, surgery only when needed — applies to anyone with a ligament, meniscus, or tendon injury, whether it happened on a sports field or a staircase.",
+          "Not at all. The same ligaments tear on a wet bathroom floor as on a football field, and the same careful diagnosis applies. Homemakers, students, farmers, office workers — anyone with a joint injury gets the same structure-by-structure assessment. 'Sports medicine' describes the method, not a membership requirement.",
+      },
+      {
+        question: "Will I definitely need an MRI?",
+        answer:
+          "Not necessarily. Clinical examination diagnoses most significant ligament and meniscus injuries reliably, and the in-house X-ray rules out fractures immediately. MRI is advised when surgery is being considered or when the examination leaves a genuine question — in other words, when its result would change what we do, not as a default expense.",
       },
     ],
   },
   {
     slug: "digital-x-ray",
     title: "Digital X-Ray",
-    metaTitle: "Digital X-Ray Facility in Adhartal, Jabalpur",
+    metaTitle: "Digital X-Ray in Adhartal Jabalpur — Same-Visit Bone Imaging",
     metaDescription:
-      "In-house digital X-ray at Patle Health Care Center, Adhartal, Jabalpur — same-visit imaging and orthopaedic consultation with Dr. Sushil Kumar Patle. No referrals or extra trips needed.",
+      "In-house digital X-ray at Patle Health Care Center, Adhartal, Jabalpur. X-ray during your orthopaedic consultation with Dr. Sushil Kumar Patle — immediate images, same-day diagnosis, no separate imaging centre trips.",
     heroTagline:
-      "Same-visit imaging and diagnosis — no referrals, no second trips, no waiting for reports.",
+      "The X-ray happens where the doctor is. That one detail changes your whole visit.",
     overview: [
-      "For most bone and joint problems, an X-ray is the first and most important investigation. At many clinics, that means a referral slip, a trip to a separate imaging centre, and a return visit with the films — often stretching a simple diagnosis across several days.",
-      "Patle Health Care Center eliminates that entirely. Our in-house digital X-ray facility means your consultation, imaging, and diagnosis happen in a single visit. Dr. Patle reviews your images immediately, explains the findings, and starts your treatment plan the same day — particularly valuable for fractures and injuries where time matters.",
+      "Think about what a fracture consultation usually looks like in most places: you see a doctor, who writes an X-ray referral. You travel — with a painful, possibly broken limb — to an imaging centre across town. You wait. You collect films or a report, sometimes the next day. Then you return to the doctor for the actual diagnosis. Three trips, two waiting rooms, and a day or more of not knowing whether the bone is broken.",
+      "At Patle Health Care Center, that entire loop collapses into one room and one visit. The digital X-ray unit is inside the clinic on Main Road, Adhartal. Dr. Patle examines you, takes the views he actually needs, and reads them on screen with you sitting there — pointing at the fracture line or the narrowed joint space and explaining what it means. You leave with a diagnosis and a treatment underway, not a referral slip.",
+      "There's a quality argument here too, not just convenience. The doctor treating you chooses the exact views based on his examination, can magnify and adjust the digital image, and interprets it against what your limb actually looks and feels like. Imaging separated from examination loses that context; imaging beside it keeps it.",
     ],
-    whenToConsultTitle: "Digital X-Ray Supports Diagnosis Of",
+    whenToConsultTitle: "What We Commonly X-Ray at the Clinic",
     whenToConsult: [
-      "Fractures and suspected bone injuries after falls or accidents",
-      "Arthritis assessment — joint space, alignment, and bone changes",
-      "Follow-up imaging to confirm fracture healing",
-      "Joint pain, deformity, and alignment evaluation",
-      "Pre-operative planning for joint replacement surgery",
+      "Suspected fractures after falls, road accidents, and sports injuries",
+      "Knee, hip, and spine views for arthritis grading and treatment planning",
+      "Follow-up films to confirm a fracture is healing straight and on schedule",
+      "Long-standing joint pain or deformity that has never been properly imaged",
+      "Post-treatment checks after plaster removal or surgical fixation",
     ],
-    whatWeOfferTitle: "Why In-House Digital X-Ray Matters",
+    whatWeOfferTitle: "What Makes In-House Imaging Better",
     whatWeOffer: [
       {
-        title: "Single-Visit Diagnosis",
+        title: "One Visit, Complete Answer",
         description:
-          "Consultation, imaging, and treatment plan in one appointment — especially important for painful injuries where travel is difficult.",
+          "Consultation, X-ray, diagnosis, and the start of treatment in a single appointment — which matters most exactly when moving around is hardest.",
       },
       {
-        title: "Digital Image Quality",
+        title: "Read by the Doctor Who Examined You",
         description:
-          "Digital radiography produces clear images available immediately, with the ability to enhance and magnify views for accurate assessment.",
+          "Your images are interpreted by Dr. Patle in the context of your history and physical findings — the way imaging is meant to be used.",
       },
       {
-        title: "Reviewed by Your Treating Doctor",
+        title: "Digital Clarity, Instant Availability",
         description:
-          "Images are reviewed directly by Dr. Patle in the context of your examination — not read remotely by someone who hasn't examined you.",
+          "Digital radiography produces sharp images available on screen immediately, with magnification of suspicious areas — no films to develop, lose, or fade.",
       },
       {
-        title: "Easy Follow-Up Imaging",
+        title: "Painless Follow-Up Checks",
         description:
-          "Healing checks for fractures and post-surgical reviews happen at the same clinic visit, keeping your care on track without extra trips.",
+          "Healing checks become a normal part of your OPD visit instead of a separate errand — so they actually happen on schedule.",
       },
     ],
     faqs: [
       {
-        question: "Do I need a prior appointment for an X-ray?",
+        question: "Can I walk in just for an X-ray?",
         answer:
-          "X-rays at the clinic are done as part of your orthopaedic consultation during OPD hours (12 Noon – 4 PM and 7 – 9 PM, Monday to Saturday). Walk-in patients are imaged as part of their evaluation when clinically indicated.",
+          "X-rays here are done as part of an orthopaedic consultation — Dr. Patle examines you first and images what the examination indicates. That's deliberate: an X-ray without clinical context often answers the wrong question. Come during OPD hours (12 Noon–4 PM or 7–9 PM, Monday to Saturday) and both happen together.",
       },
       {
-        question: "Is a digital X-ray safe?",
+        question: "Is the radiation from an X-ray something to worry about?",
         answer:
-          "X-ray examinations use low radiation doses, and digital systems are designed to keep exposure to the minimum needed for a diagnostic image. X-rays are only advised when clinically indicated. Inform the doctor if you are or may be pregnant.",
+          "A limb X-ray involves a very small radiation dose, and digital systems keep exposure to the minimum needed for a clear image. X-rays are advised only when the finding would affect your treatment. Do tell the doctor if you are or might be pregnant, so imaging can be deferred or shielded appropriately.",
       },
       {
-        question: "Will I get my X-ray report the same day?",
+        question: "Will an X-ray show everything wrong with my joint?",
         answer:
-          "Yes. Digital images are available immediately and are reviewed by Dr. Patle during your consultation itself, so you leave with a diagnosis and plan — not a 'collect report tomorrow' slip.",
+          "No, and it's worth being upfront about this: X-rays show bone excellently — fractures, alignment, arthritis changes — but not soft tissue like ligaments, menisci, or muscle. If the examination points to a soft-tissue injury, Dr. Patle will say so and advise MRI only if its answer would change the plan.",
       },
       {
-        question: "Can I bring X-rays taken elsewhere?",
+        question: "Should I bring X-rays taken at other centres?",
         answer:
-          "Certainly. Previous films and reports are helpful for comparison, especially for healing fractures and progressing arthritis. Bring any prior imaging to your consultation.",
+          "Please do — old films are genuinely valuable. Comparing today's image with one from six months ago shows whether arthritis is progressing or a fracture line is filling in, which a single snapshot can't. Bring reports too, even for scans done years ago.",
       },
     ],
   },
   {
     slug: "physiotherapy-rehabilitation",
     title: "Physiotherapy & Rehabilitation",
-    metaTitle: "Physiotherapy Centre in Adhartal, Jabalpur",
+    metaTitle: "Physiotherapy Centre in Adhartal Jabalpur — Injury & Post-Op Rehab",
     metaDescription:
-      "Dedicated physiotherapy and rehabilitation centre at Patle Health Care Center, Adhartal, Jabalpur — post-surgical recovery, fracture rehab, arthritis exercise programs, and sports injury rehabilitation.",
+      "Physiotherapy centre inside Patle Health Care Center, Adhartal, Jabalpur — rehabilitation after fractures and surgery, arthritis exercise programs, and sports injury rehab, coordinated directly with Dr. Sushil Kumar Patle.",
     heroTagline:
-      "A dedicated in-house centre for post-surgical recovery, injury rehab, and long-term joint health.",
+      "The plaster comes off, and the real work begins. We're built for that part too.",
     overview: [
-      "Surgery and medicines are only half of orthopaedic care. Whether it's regaining knee movement after a replacement, rebuilding strength after a fracture heals, or keeping arthritic joints mobile — structured physiotherapy is what converts treatment into real-world recovery.",
-      "Patle Health Care Center houses a dedicated physiotherapy and rehabilitation centre within the clinic. Programs are designed in coordination with Dr. Patle's treatment plan, so your rehabilitation matches your surgery, injury stage, and personal goals — with progress reviewed by the same team that treats you.",
+      "There's a moment every fracture patient knows: the plaster comes off after six weeks, and the arm underneath looks thinner, feels stiff, and refuses to straighten. The bone has healed — the X-ray proves it — but the limb doesn't work yet. This is the gap where recoveries quietly fail, because in most setups the doctor's job ends where the physiotherapist's begins, and the two never speak.",
+      "At Patle Health Care Center, the physiotherapy centre is inside the clinic, and that changes the everyday mechanics of getting better. Dr. Patle writes the rehabilitation plan knowing exactly what he fixed and how solid it is. The physiotherapy team progresses you through it, and when something isn't going right — a knee that stays swollen, a shoulder that stalls at half its movement — the surgeon is a corridor away, not a phone number that never picks up.",
+      "The centre runs programs well beyond post-fracture recovery: strengthening for arthritic knees that keeps people out of trouble for years, guided rehab for ligament injuries, balance and mobility work for older adults after falls. In each case the philosophy is identical — exercise prescribed like medicine, with a purpose, a dose, and a progression.",
     ],
-    whenToConsultTitle: "Rehabilitation Programs We Provide",
+    whenToConsultTitle: "Programs We Run at the Centre",
     whenToConsult: [
-      "Post-operative rehabilitation after joint replacement and fracture surgery",
-      "Stiffness and weakness after cast removal",
-      "Exercise programs for knee, hip, and spine arthritis",
-      "Sports injury rehabilitation and return-to-activity training",
-      "Posture, balance, and mobility programs for older adults",
+      "Post-plaster rehabilitation — restoring motion and strength after cast removal",
+      "Post-surgical recovery after fracture fixation and other orthopaedic procedures",
+      "Knee arthritis programs — quadriceps strengthening that measurably reduces daily pain",
+      "Ligament and sports injury rehab, through to return-to-sport testing",
+      "Back and neck pain programs built on movement, posture, and strengthening",
+      "Fall-prevention, balance, and mobility training for older adults",
     ],
-    whatWeOfferTitle: "What Makes Our Rehabilitation Different",
+    whatWeOfferTitle: "Why Rehab Works Better Under One Roof",
     whatWeOffer: [
       {
-        title: "Doctor-Coordinated Programs",
+        title: "The Surgeon Writes the Brief",
         description:
-          "Your physiotherapy plan is designed around your diagnosis and surgical details, with direct communication between the physiotherapy team and Dr. Patle.",
+          "Rehabilitation starts from precise knowledge of your injury or operation — which movements to push, which to protect, and when the next stage is safe.",
       },
       {
-        title: "Staged, Goal-Based Progression",
+        title: "Progress Reviewed, Not Assumed",
         description:
-          "Rehabilitation advances through defined stages — pain control, range of movement, strength, function — rather than a one-size-fits-all routine.",
+          "Your program is adjusted based on what your joint actually does each week. Plateaus get investigated — sometimes with a same-day X-ray — instead of being exercised through blindly.",
       },
       {
-        title: "Same-Roof Convenience",
+        title: "A Program, Not Just Sessions",
         description:
-          "Consultation, X-ray review, and physiotherapy at one location — progress issues are addressed in real time, not lost between separate providers.",
+          "Every stage has a goal: this range by week three, this strength by week six. You always know what you're working toward and how you're tracking against it.",
       },
       {
-        title: "Home Program Training",
+        title: "Home Exercises You'll Actually Do",
         description:
-          "Every patient learns a safe home exercise routine, because the sessions between clinic visits are where much of the recovery happens.",
+          "The sessions between clinic visits are where recovery mostly happens, so you learn a short, correct home routine — demonstrated, corrected, and kept realistic for your day.",
       },
     ],
     recoveryNote:
-      "Consistency matters more than intensity in rehabilitation. Short, correct, regular sessions — at the centre and at home — deliver better outcomes than occasional intensive effort. Our team keeps your program realistic for your routine.",
+      "In rehabilitation, consistency beats intensity — every time. Fifteen correct minutes daily outperforms a heroic hour once a week. Programs here are deliberately kept small enough to live inside a normal working day, because a perfect program nobody follows is worth less than a modest one done every morning.",
     faqs: [
       {
-        question: "Do I need a doctor's referral for physiotherapy?",
+        question: "Do I need to be Dr. Patle's patient to use the physiotherapy centre?",
         answer:
-          "Patients under Dr. Patle's care move seamlessly into rehabilitation as part of their treatment plan. New patients are first evaluated in the OPD so the physiotherapy program addresses the right diagnosis.",
+          "New patients are first seen in the OPD so that rehabilitation targets the correct diagnosis — treating 'knee pain' with exercises meant for the wrong condition wastes weeks. After that evaluation, your program runs at the centre with periodic reviews. Existing patients move into rehab as a built-in part of their treatment.",
       },
       {
-        question: "How many physiotherapy sessions will I need?",
+        question: "How many sessions will I need, honestly?",
         answer:
-          "It depends on the condition — post-fracture stiffness may need a few weeks, while joint replacement rehabilitation runs in stages over a longer period. Your program and expected duration are explained at the start and adjusted based on progress.",
+          "It genuinely varies: post-plaster stiffness often improves substantially inside three to four weeks; ligament and post-surgical programs run longer, in stages. What we commit to is telling you the expected duration at the start, showing you the milestones, and not stretching a program that has met its goals.",
       },
       {
-        question: "Is physiotherapy painful?",
+        question: "Physiotherapy hurt when I tried it before. Is that normal?",
         answer:
-          "Some stretching discomfort is normal, particularly when regaining movement after surgery or immobilisation, but therapy should not cause lasting pain. Programs are progressed at a pace your tissue healing allows.",
+          "A stretching, working discomfort during sessions is normal — especially when winning back movement a joint has lost. Sharp pain, or pain that leaves the joint worse for days afterward, is not, and it usually means the program needs adjusting rather than enduring. Because the surgeon is on-site, 'this doesn't feel right' gets investigated quickly here.",
       },
       {
-        question: "Can physiotherapy help me avoid surgery?",
+        question: "Can exercises really help knee arthritis, or is that just something doctors say?",
         answer:
-          "In many conditions — early arthritis, partial ligament injuries, back pain — structured physiotherapy is the primary treatment and surgery is never needed. Where surgery is eventually required, better pre-operative strength usually means smoother recovery.",
+          "The evidence is solid and the mechanism is simple: the quadriceps muscle is the knee's shock absorber, and strengthening it measurably reduces pain and improves walking in arthritic knees. It requires weeks of consistency before it pays off, which is where most people give up — and where a structured, supervised program earns its keep.",
       },
     ],
   },

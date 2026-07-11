@@ -4,6 +4,15 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/joint-replacement-surgery",
+        destination: "/services",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
