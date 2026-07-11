@@ -28,17 +28,13 @@ export default function SectionHeader({
       }`}
     >
       {eyebrow && (
-        <span
-          className={`inline-block text-sm font-semibold tracking-widest uppercase mb-3 ${
-            light ? "text-teal-light" : "text-teal"
-          }`}
-        >
+        <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-[3px] text-teal-light">
           {eyebrow}
         </span>
       )}
       <h2
         className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ${
-          light ? "text-white" : "text-navy"
+          light ? "text-white" : "text-heading"
         }`}
       >
         {title}
@@ -46,7 +42,7 @@ export default function SectionHeader({
       {description && (
         <p
           className={`mt-4 text-base md:text-lg leading-relaxed ${
-            light ? "text-white/70" : "text-navy/70"
+            light ? "text-ondark-muted" : "text-muted"
           }`}
         >
           {description}

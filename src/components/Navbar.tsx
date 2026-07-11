@@ -24,10 +24,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-navy/80 backdrop-blur-lg border-b border-white/10 py-3"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-xl transition-all duration-300 ${
+        scrolled ? "shadow-nav py-3" : "py-4"
       }`}
     >
       <nav className="section-container flex items-center justify-between">
@@ -37,11 +35,16 @@ export default function Navbar() {
             e.preventDefault();
             handleNavClick("#home");
           }}
-          className="font-serif text-lg md:text-xl font-bold text-white"
+          className="flex items-center gap-3"
         >
-          Dr. Sushil Kumar Patle
-          <span className="block text-xs font-sans font-normal tracking-wide text-teal-light">
-            Consultant Orthopaedic Surgeon
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal font-serif text-lg font-bold text-white">
+            P
+          </span>
+          <span className="font-serif text-lg font-bold leading-tight text-heading md:text-xl">
+            Dr. Sushil Kumar Patle
+            <span className="block text-xs font-sans font-medium tracking-wide text-teal">
+              Consultant Orthopaedic Surgeon
+            </span>
           </span>
         </a>
 
@@ -54,7 +57,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick(link.href);
               }}
-              className="text-sm font-medium text-white/80 hover:text-teal-light transition-colors"
+              className="text-sm font-medium text-muted hover:text-heading transition-colors"
             >
               {link.label}
             </a>
@@ -64,7 +67,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href={`tel:${DOCTOR.phoneRaw}`}
-            className="flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-teal-light transition-colors"
+            className="flex items-center gap-2 text-sm font-semibold text-heading hover:text-teal transition-colors"
           >
             <Phone className="h-4 w-4" />
             {DOCTOR.phone}
@@ -75,7 +78,7 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#appointment");
             }}
-            className="rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal/30 transition-transform hover:scale-105"
+            className="rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-hover transition-all hover:bg-teal-dark hover:scale-105"
           >
             Book Appointment
           </a>
@@ -84,7 +87,7 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="lg:hidden text-white"
+          className="lg:hidden text-heading"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -97,7 +100,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden bg-navy/95 backdrop-blur-lg border-t border-white/10"
+            className="lg:hidden overflow-hidden bg-cream/95 backdrop-blur-xl border-t border-line"
           >
             <div className="section-container flex flex-col gap-4 py-6">
               {NAV_LINKS.map((link) => (
@@ -108,14 +111,14 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="text-base font-medium text-white/90"
+                  className="text-base font-medium text-body"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href={`tel:${DOCTOR.phoneRaw}`}
-                className="flex items-center gap-2 text-base font-semibold text-teal-light"
+                className="flex items-center gap-2 text-base font-semibold text-teal"
               >
                 <Phone className="h-4 w-4" />
                 {DOCTOR.phone}

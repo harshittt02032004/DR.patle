@@ -20,7 +20,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-navy py-20 md:py-28"
+      className="bg-dark-gradient relative overflow-hidden py-20 md:py-28"
     >
       <div
         aria-hidden="true"
@@ -34,8 +34,8 @@ export default function Testimonials() {
         />
 
         <div className="mx-auto max-w-2xl">
-          <div className="glass relative flex min-h-[260px] flex-col rounded-3xl p-8 md:p-10">
-            <Quote className="h-9 w-9 text-teal-light/50" />
+          <div className="glass-dark relative flex min-h-[260px] flex-col rounded-3xl p-8 md:p-10">
+            <Quote className="h-9 w-9 text-teal/30" />
 
             <AnimatePresence mode="wait">
               <TestimonialCard
@@ -53,7 +53,7 @@ export default function Testimonials() {
                 aria-label={`Show testimonial ${i + 1}`}
                 onClick={() => setActive(i)}
                 className={`h-2.5 rounded-full transition-all ${
-                  i === active ? "w-8 bg-teal-light" : "w-2.5 bg-white/25"
+                  i === active ? "w-8 bg-teal" : "w-2.5 bg-white/10"
                 }`}
               />
             ))}

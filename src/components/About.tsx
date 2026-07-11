@@ -33,7 +33,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-navy/70 md:text-lg"
+          className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-body md:text-lg"
         >
           {DOCTOR.bio}
         </motion.p>
@@ -48,16 +48,16 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: (i % 2) * 0.1 }}
-                className="flex gap-5 rounded-2xl border border-navy/5 bg-slate-50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-lg"
+                className="flex gap-5 rounded-2xl border border-line-light bg-cream p-7 transition-all duration-300 hover:-translate-y-1 hover:border-teal-lighter hover:shadow-lift"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-navy text-teal-light">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
                   <Icon className="h-7 w-7" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg font-bold text-navy">
+                  <h3 className="font-serif text-lg font-bold text-heading">
                     {usp.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-navy/60">
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
                     {usp.description}
                   </p>
                 </div>

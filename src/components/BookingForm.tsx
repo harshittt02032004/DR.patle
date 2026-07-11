@@ -23,6 +23,12 @@ const INITIAL_STATE: FormState = {
   visitType: "new",
 };
 
+const inputClasses =
+  "w-full rounded-xl border border-line bg-cream px-4 py-3 text-sm text-body placeholder:text-faint focus:border-teal focus:outline-none focus:ring-4 focus:ring-teal/10";
+
+const labelClasses =
+  "mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted";
+
 export default function BookingForm() {
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
@@ -62,22 +68,23 @@ export default function BookingForm() {
 
   if (status === "success") {
     return (
-      <div className="glass-light flex flex-col items-center justify-center rounded-3xl p-12 text-center">
+      <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-line bg-white p-12 text-center shadow-card">
+        <span aria-hidden="true" className="accent-line absolute inset-x-0 top-0 h-1" />
         <motion.div
           initial={{ scale: 0, rotate: -30 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-          <CheckCircle2 className="h-14 w-14 text-emerald-500" />
+          <CheckCircle2 className="h-14 w-14 text-green-600" />
         </motion.div>
-        <h3 className="mt-5 font-serif text-2xl font-bold text-navy">
+        <h3 className="mt-5 font-serif text-2xl font-bold text-heading">
           Appointment Request Received
         </h3>
-        <p className="mt-3 max-w-sm text-sm text-navy/60">
+        <p className="mt-3 max-w-sm text-sm text-muted">
           Thank you! Our clinic team will call you shortly on the number
           provided to confirm your appointment slot.
         </p>
-        <p className="mt-2 text-sm text-navy/60">
+        <p className="mt-2 text-sm text-faint">
           Need it faster? Call us directly at{" "}
           <a
             href={`tel:${DOCTOR.phoneRaw}`}
@@ -89,7 +96,7 @@ export default function BookingForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 rounded-full bg-teal px-6 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
+          className="mt-6 rounded-full bg-teal px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-teal-dark hover:scale-105"
         >
           Book Another Appointment
         </button>
@@ -100,11 +107,12 @@ export default function BookingForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass-light rounded-3xl p-7 md:p-10"
+      className="relative overflow-hidden rounded-3xl border border-line bg-white p-7 shadow-card md:p-10"
     >
+      <span aria-hidden="true" className="accent-line absolute inset-x-0 top-0 h-1" />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-navy/80">
+          <label htmlFor="name" className={labelClasses}>
             Full Name
           </label>
           <input
@@ -114,12 +122,12 @@ export default function BookingForm() {
             value={form.name}
             onChange={(e) => update("name", e.target.value)}
             placeholder="Enter your full name"
-            className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy placeholder:text-navy/35 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
+            className={inputClasses}
           />
         </div>
 
         <div>
-          <label htmlFor="mobile" className="mb-1.5 block text-sm font-medium text-navy/80">
+          <label htmlFor="mobile" className={labelClasses}>
             Mobile Number
           </label>
           <input
@@ -135,12 +143,12 @@ export default function BookingForm() {
               update("mobile", e.target.value.replace(/\D/g, "").slice(0, 10))
             }
             placeholder="10-digit mobile number"
-            className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy placeholder:text-navy/35 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
+            className={inputClasses}
           />
         </div>
 
         <div>
-          <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-navy/80">
+          <label htmlFor="date" className={labelClasses}>
             Preferred Date
           </label>
           <input
@@ -150,12 +158,12 @@ export default function BookingForm() {
             value={form.date}
             onChange={(e) => update("date", e.target.value)}
             min={new Date().toISOString().split("T")[0]}
-            className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
+            className={inputClasses}
           />
         </div>
 
         <div>
-          <label htmlFor="timeSlot" className="mb-1.5 block text-sm font-medium text-navy/80">
+          <label htmlFor="timeSlot" className={labelClasses}>
             Preferred OPD Slot
           </label>
           <select
@@ -163,7 +171,7 @@ export default function BookingForm() {
             required
             value={form.timeSlot}
             onChange={(e) => update("timeSlot", e.target.value)}
-            className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
+            className={inputClasses}
           >
             <option value="" disabled>
               Select a slot
@@ -178,11 +186,9 @@ export default function BookingForm() {
         </div>
 
         <div>
-          <span className="mb-1.5 block text-sm font-medium text-navy/80">
-            Visit Type
-          </span>
+          <span className={labelClasses}>Visit Type</span>
           <div className="flex gap-5 pt-1">
-            <label className="flex items-center gap-2 text-sm text-navy/80">
+            <label className="flex items-center gap-2 text-sm text-body">
               <input
                 type="radio"
                 name="visitType"
@@ -192,7 +198,7 @@ export default function BookingForm() {
               />
               New Patient
             </label>
-            <label className="flex items-center gap-2 text-sm text-navy/80">
+            <label className="flex items-center gap-2 text-sm text-body">
               <input
                 type="radio"
                 name="visitType"
@@ -206,7 +212,7 @@ export default function BookingForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="problem" className="mb-1.5 block text-sm font-medium text-navy/80">
+          <label htmlFor="problem" className={labelClasses}>
             Briefly Describe Your Concern
           </label>
           <textarea
@@ -216,13 +222,13 @@ export default function BookingForm() {
             value={form.problem}
             onChange={(e) => update("problem", e.target.value)}
             placeholder="e.g. Knee pain for the past 2 weeks, difficulty walking"
-            className="w-full resize-none rounded-xl border border-navy/10 bg-white px-4 py-3 text-sm text-navy placeholder:text-navy/35 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
+            className={`${inputClasses} resize-none`}
           />
         </div>
       </div>
 
       {status === "error" && (
-        <p className="mt-4 text-sm font-medium text-red-500">
+        <p className="mt-4 text-sm font-medium text-red-600">
           Something went wrong while submitting your request. Please call us
           directly at {DOCTOR.phone}.
         </p>
@@ -233,7 +239,7 @@ export default function BookingForm() {
         disabled={status === "submitting"}
         whileHover={{ scale: status === "submitting" ? 1 : 1.02 }}
         whileTap={{ scale: status === "submitting" ? 1 : 0.98 }}
-        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-teal/25 transition-colors disabled:opacity-70 sm:w-auto"
+        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-teal px-7 py-3.5 text-sm font-semibold text-white shadow-hover transition-colors hover:bg-teal-dark disabled:opacity-70 sm:w-auto"
       >
         {status === "submitting" ? (
           <>

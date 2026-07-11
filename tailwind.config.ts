@@ -8,20 +8,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0A1628",
-          light: "#132339",
-          lighter: "#1C3252",
-        },
+        cream: "#FAF9F6",
+        mist: "#F0F5F4",
+        heading: "#115E59",
+        body: "#3D5654",
+        muted: "#6B7C78",
+        faint: "#9AABA7",
         teal: {
-          DEFAULT: "#0EA5E9",
-          light: "#38BDF8",
-          lighter: "#7DD3FC",
+          DEFAULT: "#0D9488",
+          dark: "#0F766E",
+          light: "#14B8A6",
+          lighter: "#5EEAD4",
+          soft: "#99F6E4",
+          mint: "#CCFBF1",
+          pale: "#F0FDFA",
+        },
+        darkteal: {
+          DEFAULT: "#0F2C2A",
+          deep: "#0A1F1E",
+          border: "#2D4A47",
+        },
+        ondark: {
+          DEFAULT: "#D1E6E3",
+          muted: "#7FA8A2",
+        },
+        line: {
+          DEFAULT: "#E0E8E6",
+          light: "#EDF2F0",
         },
       },
+      boxShadow: {
+        card: "0 1px 3px rgba(15, 40, 38, 0.04)",
+        hover: "0 8px 30px rgba(13, 148, 136, 0.08)",
+        nav: "0 1px 24px rgba(15, 40, 38, 0.06)",
+        lift: "0 12px 32px rgba(13, 148, 136, 0.08)",
+      },
       fontFamily: {
-        serif: ["var(--font-playfair)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        serif: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "gradient-x": {
@@ -52,9 +76,6 @@ const config: Config = {
         "float-slow": "float-slow 11s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "fade-up": "fade-up 0.7s ease-out forwards",
-      },
-      backgroundSize: {
-        "gradient-size": "200% 200%",
       },
     },
   },

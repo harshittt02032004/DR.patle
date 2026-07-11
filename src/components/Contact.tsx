@@ -9,7 +9,7 @@ export default function Contact() {
   const mapSrc = `https://maps.google.com/maps?q=${DOCTOR.coordinates.lat},${DOCTOR.coordinates.lng}&hl=en&z=15&output=embed`;
 
   return (
-    <section id="contact" className="bg-slate-50 py-20 md:py-28">
+    <section id="contact" className="bg-white py-20 md:py-28">
       <div className="section-container">
         <SectionHeader
           eyebrow="Visit Us"
@@ -23,7 +23,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-navy/5 lg:col-span-2"
+            className="overflow-hidden rounded-[18px] border border-line-light shadow-card lg:col-span-2"
           >
             <iframe
               title={`${DOCTOR.clinicName} location map`}
@@ -41,17 +41,17 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col gap-5 rounded-2xl bg-white p-7 shadow-sm ring-1 ring-navy/5"
+            className="flex flex-col gap-5 rounded-2xl border border-line-light bg-cream p-7 shadow-card"
           >
             <div className="flex gap-4">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">
+                <p className="text-sm font-semibold text-heading">
                   {DOCTOR.clinicName}
                 </p>
-                <p className="mt-1 text-sm text-navy/60">
+                <p className="mt-1 text-sm text-body">
                   {DOCTOR.clinicAddress}
                 </p>
               </div>
@@ -62,14 +62,14 @@ export default function Contact() {
                 <Clock className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">OPD Timings</p>
-                <p className="mt-1 text-sm text-navy/60">
+                <p className="text-sm font-semibold text-heading">OPD Timings</p>
+                <p className="mt-1 text-sm text-body">
                   Afternoon: {DOCTOR.opd.afternoon}
                 </p>
-                <p className="text-sm text-navy/60">
+                <p className="text-sm text-body">
                   Evening: {DOCTOR.opd.evening}
                 </p>
-                <p className="mt-1 text-xs text-navy/40">
+                <p className="mt-1 text-xs text-faint">
                   {DOCTOR.opd.days} · {DOCTOR.opd.closed}
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                 <Phone className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">Mobile</p>
+                <p className="text-sm font-semibold text-heading">Mobile</p>
                 <a
                   href={`tel:${DOCTOR.phoneRaw}`}
                   className="mt-1 block text-sm font-medium text-teal hover:underline"
@@ -95,7 +95,7 @@ export default function Contact() {
                 <PhoneCall className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">Landline</p>
+                <p className="text-sm font-semibold text-heading">Landline</p>
                 <a
                   href={`tel:${DOCTOR.landlineRaw}`}
                   className="mt-1 block text-sm font-medium text-teal hover:underline"
@@ -110,10 +110,10 @@ export default function Contact() {
                 <ScanLine className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-navy">
+                <p className="text-sm font-semibold text-heading">
                   In-house Facilities
                 </p>
-                <p className="mt-1 text-sm text-navy/60">
+                <p className="mt-1 text-sm text-body">
                   {DOCTOR.facilities.join(" · ")}
                 </p>
               </div>

@@ -6,7 +6,7 @@ import { SERVICES } from "@/lib/constants";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-slate-50 py-20 md:py-28">
+    <section id="services" className="bg-mist py-20 md:py-28">
       <div className="section-container">
         <SectionHeader
           eyebrow="What We Treat"

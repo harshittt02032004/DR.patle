@@ -22,7 +22,7 @@ export default function Home() {
       <About />
       <Testimonials />
 
-      <section id="appointment" className="bg-white py-20 md:py-28">
+      <section id="appointment" className="bg-mist py-20 md:py-28">
         <div className="section-container">
           <SectionHeader
             eyebrow="Get In Touch"
@@ -35,36 +35,36 @@ export default function Home() {
               <BookingForm />
             </div>
 
-            <div className="flex flex-col gap-5 rounded-2xl bg-navy p-7 text-white">
+            <div className="flex flex-col gap-5 rounded-2xl bg-darkteal p-7 text-white">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-teal-light">
                   OPD Timings
                 </p>
                 <div className="mt-3 flex items-start gap-3">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-teal-light" />
-                  <div className="text-sm text-white/70">
+                  <div className="text-sm text-ondark">
                     <p>Afternoon: {DOCTOR.opd.afternoon}</p>
                     <p>Evening: {DOCTOR.opd.evening}</p>
-                    <p className="mt-1 text-xs text-white/40">
+                    <p className="mt-1 text-xs text-ondark-muted">
                       {DOCTOR.opd.days} · {DOCTOR.opd.closed}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="border-t border-white/10 pt-5">
+              <div className="border-t border-white/5 pt-5">
                 <p className="text-sm font-semibold uppercase tracking-wide text-teal-light">
                   Clinic Address
                 </p>
                 <div className="mt-3 flex items-start gap-3">
                   <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-teal-light" />
-                  <p className="text-sm text-white/70">
+                  <p className="text-sm text-ondark">
                     {DOCTOR.clinicName}, {DOCTOR.clinicAddress}
                   </p>
                 </div>
               </div>
 
-              <div className="border-t border-white/10 pt-5">
+              <div className="border-t border-white/5 pt-5">
                 <p className="text-sm font-semibold uppercase tracking-wide text-teal-light">
                   Prefer to Call?
                 </p>
@@ -77,7 +77,7 @@ export default function Home() {
                 </a>
                 <a
                   href={`tel:${DOCTOR.landlineRaw}`}
-                  className="mt-2 flex items-center gap-3 text-sm font-medium text-white/70 hover:text-teal-light"
+                  className="mt-2 flex items-center gap-3 text-sm font-medium text-ondark hover:text-teal-light"
                 >
                   <Phone className="h-4 w-4 text-teal-light" />
                   {DOCTOR.landline} (Landline)

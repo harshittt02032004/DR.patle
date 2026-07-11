@@ -23,10 +23,10 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <Star key={i} className="h-4 w-4 fill-amber-400" strokeWidth={0} />
         ))}
       </div>
-      <p className="text-lg leading-relaxed text-white/85 md:text-xl">
+      <p className="text-lg leading-relaxed text-ondark md:text-xl">
         &ldquo;{testimonial.text}&rdquo;
       </p>
-      <p className="mt-6 font-serif text-base font-semibold text-teal-light">
+      <p className="mt-6 font-serif text-base font-semibold text-white">
         {testimonial.name}
       </p>
     </motion.div>

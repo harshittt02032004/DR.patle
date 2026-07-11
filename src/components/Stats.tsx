@@ -6,7 +6,8 @@ import { STATS } from "@/lib/constants";
 
 export default function Stats() {
   return (
-    <section className="border-b border-navy/5 bg-white py-14">
+    <section className="relative border-b border-line-light bg-white py-14">
+      <span aria-hidden="true" className="accent-line absolute inset-x-0 top-0 h-0.5" />
       <div className="section-container grid grid-cols-2 gap-8 md:grid-cols-4">
         {STATS.map((stat, i) => (
           <motion.div
@@ -17,14 +18,14 @@ export default function Stats() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="text-center"
           >
-            <p className="bg-gradient-to-r from-teal to-teal-light bg-clip-text font-serif text-3xl font-bold text-transparent md:text-4xl">
+            <p className="font-serif text-3xl font-bold text-teal md:text-4xl">
               <AnimatedCounter
                 value={stat.value}
                 suffix={stat.suffix}
                 decimals={stat.decimals ?? 0}
               />
             </p>
-            <p className="mt-2 text-sm font-medium text-navy/60 md:text-base">
+            <p className="mt-2 text-sm font-medium text-muted md:text-base">
               {stat.label}
             </p>
           </motion.div>
