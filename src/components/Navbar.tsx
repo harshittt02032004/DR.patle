@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { DOCTOR, NAV_LINKS } from "@/lib/constants";
@@ -8,6 +10,7 @@ import { DOCTOR, NAV_LINKS } from "@/lib/constants";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -16,11 +19,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  useEffect(() => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  }, [pathname]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
@@ -29,14 +33,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="section-container flex items-center justify-between">
-        <a
-          href="#home"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("#home");
-          }}
-          className="flex items-center gap-3"
-        >
+        <Link href="/" className="flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal font-serif text-lg font-bold text-white">
             P
           </span>
@@ -46,22 +43,24 @@ export default function Navbar() {
               Consultant Orthopaedic Surgeon
             </span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.href);
-              }}
-              className="text-sm font-medium text-muted hover:text-heading transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.filter((l) => l.label !== "Book Appointment").map(
+            (link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors hover:text-heading ${
+                  isActive(link.href)
+                    ? "font-semibold text-teal"
+                    : "text-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
@@ -72,16 +71,12 @@ export default function Navbar() {
             <Phone className="h-4 w-4" />
             {DOCTOR.phone}
           </a>
-          <a
-            href="#appointment"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("#appointment");
-            }}
+          <Link
+            href="/book-appointment"
             className="rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-white shadow-hover transition-all hover:bg-teal-dark hover:scale-105"
           >
             Book Appointment
-          </a>
+          </Link>
         </div>
 
         <button
@@ -104,17 +99,15 @@ export default function Navbar() {
           >
             <div className="section-container flex flex-col gap-4 py-6">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }}
-                  className="text-base font-medium text-body"
+                  className={`text-base font-medium ${
+                    isActive(link.href) ? "text-teal" : "text-body"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href={`tel:${DOCTOR.phoneRaw}`}

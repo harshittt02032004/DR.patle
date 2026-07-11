@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import SectionHeader from "./ui/SectionHeader";
 import ServiceCard from "./ui/ServiceCard";
 import { SERVICES } from "@/lib/constants";
@@ -18,6 +20,16 @@ export default function Services() {
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-teal px-7 py-3.5 text-sm font-semibold text-teal transition-colors hover:bg-teal hover:text-white"
+          >
+            View All Services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

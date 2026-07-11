@@ -1,10 +1,11 @@
+import Link from "next/link";
 import { Phone, MapPin, BadgeCheck } from "lucide-react";
-import { DOCTOR, NAV_LINKS, WEEK_DAYS } from "@/lib/constants";
+import { DOCTOR, NAV_LINKS, SERVICES, WEEK_DAYS } from "@/lib/constants";
 
 export default function Footer() {
   return (
     <footer className="bg-darkteal-deep pt-16 pb-8 text-white">
-      <div className="section-container grid grid-cols-1 gap-10 border-b border-white/5 pb-10 md:grid-cols-4">
+      <div className="section-container grid grid-cols-1 gap-10 border-b border-white/5 pb-10 sm:grid-cols-2 md:grid-cols-5">
         <div>
           <p className="font-serif text-lg font-bold text-white">
             {DOCTOR.name}
@@ -29,12 +30,38 @@ export default function Footer() {
           <ul className="mt-4 space-y-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className="text-sm text-ondark-muted transition-colors hover:text-teal-light"
                 >
                   {link.label}
-                </a>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/privacy-policy"
+                className="text-sm text-ondark-muted transition-colors hover:text-teal-light"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-ondark">
+            Services
+          </p>
+          <ul className="mt-4 space-y-2">
+            {SERVICES.map((service) => (
+              <li key={service.slug}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="text-sm text-ondark-muted transition-colors hover:text-teal-light"
+                >
+                  {service.title}
+                </Link>
               </li>
             ))}
           </ul>

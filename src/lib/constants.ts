@@ -55,6 +55,7 @@ export const STATS = [
 ];
 
 export type Service = {
+  slug: string;
   title: string;
   tag: string;
   description: string;
@@ -63,6 +64,7 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
+    slug: "joint-replacement-surgery",
     title: "Joint Replacement Surgery",
     tag: "Knee & Hip",
     description:
@@ -70,6 +72,7 @@ export const SERVICES: Service[] = [
     icon: "Bone",
   },
   {
+    slug: "fracture-trauma-care",
     title: "Fracture & Trauma Care",
     tag: "Emergency & Elective",
     description:
@@ -77,6 +80,7 @@ export const SERVICES: Service[] = [
     icon: "Stethoscope",
   },
   {
+    slug: "rheumatology-arthritis",
     title: "Rheumatology & Arthritis",
     tag: "Fellowship-Trained",
     description:
@@ -84,6 +88,7 @@ export const SERVICES: Service[] = [
     icon: "Shield",
   },
   {
+    slug: "sports-medicine",
     title: "Sports Medicine",
     tag: "ACL / Ligament / Meniscus",
     description:
@@ -91,6 +96,7 @@ export const SERVICES: Service[] = [
     icon: "Zap",
   },
   {
+    slug: "digital-x-ray",
     title: "Digital X-Ray",
     tag: "In-House Facility",
     description:
@@ -98,6 +104,7 @@ export const SERVICES: Service[] = [
     icon: "ScanLine",
   },
   {
+    slug: "physiotherapy-rehabilitation",
     title: "Physiotherapy & Rehabilitation",
     tag: "Dedicated Centre",
     description:
@@ -174,12 +181,11 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Book Appointment", href: "#appointment" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Book Appointment", href: "/book-appointment" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const APPS_SCRIPT_URL =
