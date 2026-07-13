@@ -42,20 +42,22 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[400ms] ${SPRING_EASE} ${
-        scrolled
-          ? "h-16 bg-cream/85 backdrop-blur-[20px] backdrop-saturate-[1.3] shadow-[0_4px_24px_rgba(15,40,38,0.06)] border-b border-line-light"
-          : "h-[68px] bg-cream/95 border-b border-transparent"
+      className={`pointer-events-none fixed top-0 left-0 right-0 z-50 transition-all duration-[400ms] ${SPRING_EASE} ${
+        scrolled ? "px-3 sm:px-4" : "px-0"
       }`}
     >
-      {scrolled && (
-        <span
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-0.5 opacity-50 bg-[linear-gradient(90deg,transparent,#0D9488,#14B8A6,#0D9488,transparent)]"
-        />
-      )}
-
-      <nav className="section-container flex h-full items-center justify-between">
+      <div
+        className={`pointer-events-auto relative mx-auto transition-all duration-[450ms] ${SPRING_EASE} ${
+          scrolled
+            ? "mt-3 h-14 max-w-6xl rounded-full border border-line-light bg-cream/85 backdrop-blur-[20px] backdrop-saturate-[1.3] shadow-[0_8px_32px_rgba(15,40,38,0.1)]"
+            : "mt-0 h-[68px] max-w-[110rem] rounded-none border border-transparent bg-cream/95"
+        }`}
+      >
+      <nav
+        className={`mx-auto flex h-full w-full max-w-7xl items-center justify-between transition-all duration-[450ms] ${SPRING_EASE} ${
+          scrolled ? "px-4 md:px-6" : "px-6"
+        }`}
+      >
         <Link href="/" className="group flex shrink-0 items-center">
           <Image
             src="/images/logo.png"
@@ -63,7 +65,9 @@ export default function Navbar() {
             width={1268}
             height={286}
             priority
-            className={`h-9 w-auto transition-transform duration-[400ms] md:h-11 ${SPRING_EASE} group-hover:scale-[1.03]`}
+            className={`w-auto transition-all duration-[450ms] ${SPRING_EASE} group-hover:scale-[1.03] ${
+              scrolled ? "h-8 md:h-9" : "h-9 md:h-11"
+            }`}
           />
         </Link>
 
@@ -172,9 +176,11 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden absolute top-full left-0 right-0 overflow-hidden bg-cream/95 backdrop-blur-xl border-t border-line shadow-nav"
+            className={`lg:hidden absolute left-0 right-0 top-[calc(100%+10px)] overflow-hidden border border-line-light bg-cream/95 backdrop-blur-xl shadow-lift ${
+              scrolled ? "rounded-3xl" : "mx-3 rounded-3xl"
+            }`}
           >
-            <div className="section-container flex flex-col gap-4 py-6">
+            <div className="flex flex-col gap-4 px-6 py-6">
               {NAV_LINKS.map((link) =>
                 link.label === "Services" ? (
                   <div key={link.href}>
@@ -252,6 +258,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </header>
   );
 }
