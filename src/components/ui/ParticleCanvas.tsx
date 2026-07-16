@@ -29,11 +29,13 @@ export default function ParticleCanvas() {
     ).matches;
 
     const resize = () => {
+      // cap DPR at 2 — beyond that the extra pixels cost frames, not fidelity
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = canvas.clientWidth;
       height = canvas.clientHeight;
-      canvas.width = width * window.devicePixelRatio;
-      canvas.height = height * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
 
       const count = Math.min(80, Math.floor((width * height) / 16000));
       particles = Array.from({ length: count }, () => ({
@@ -80,14 +82,16 @@ export default function ParticleCanvas() {
       }
 
       const maxDist = 140;
+      const maxDistSq = maxDist * maxDist;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const a = particles[i];
           const b = particles[j];
           const dx = a.x - b.x;
           const dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxDist) {
+          const distSq = dx * dx + dy * dy;
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq);
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -113,11 +117,28 @@ export default function ParticleCanvas() {
         }
       }
 
-      animationId = requestAnimationFrame(draw);
+      if (running) animationId = requestAnimationFrame(draw);
     };
 
     resize();
-    draw();
+
+    // only burn frames while the canvas is actually on screen
+    let running = false;
+    const start = () => {
+      if (!running) {
+        running = true;
+        animationId = requestAnimationFrame(draw);
+      }
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(animationId);
+    };
+    const observer = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? start() : stop()),
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     const handleResize = () => {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -135,13 +156,14 @@ export default function ParticleCanvas() {
       mouse.y = -9999;
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
     // listen on window so the effect works even though overlay content sits above the canvas
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseout", handleMouseLeave);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("mouseout", handleMouseLeave, { passive: true });
 
     return () => {
-      cancelAnimationFrame(animationId);
+      observer.disconnect();
+      stop();
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseout", handleMouseLeave);

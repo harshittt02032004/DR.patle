@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import { DOCTOR } from "@/lib/constants";
 import { jsonLd, SITE_URL } from "@/lib/schema";
 
@@ -73,7 +74,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

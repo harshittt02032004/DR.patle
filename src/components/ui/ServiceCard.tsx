@@ -50,7 +50,7 @@ export default function ServiceCard({
           alt={`${service.title} at Patle Health Care Center, Jabalpur`}
           fill
           sizes={sizes}
-          className={`object-cover transition-transform duration-700 ${SPRING} group-hover:scale-[1.08] group-data-[active=true]:scale-[1.08]`}
+          className={`transform-gpu object-cover transition-transform duration-700 ${SPRING} group-hover:scale-[1.08] group-data-[active=true]:scale-[1.08]`}
         />
       </div>
       <div
@@ -72,7 +72,7 @@ export default function ServiceCard({
 
       {/* Layer 3 — hover overlay panel */}
       <div
-        className={`pointer-events-none absolute inset-x-0 bottom-0 z-[2] translate-y-[70%] bg-[linear-gradient(0deg,#064E4A_0%,#0D9488_75%,transparent_100%)] p-5 pb-[68px] transition-transform duration-[550ms] ${SPRING} group-hover:pointer-events-auto group-hover:translate-y-0 group-data-[active=true]:pointer-events-auto group-data-[active=true]:translate-y-0`}
+        className={`pointer-events-none absolute inset-x-0 bottom-0 z-[2] translate-y-[70%] transform-gpu bg-[linear-gradient(0deg,#064E4A_0%,#0D9488_75%,transparent_100%)] p-5 pb-[68px] transition-transform duration-[550ms] ${SPRING} group-hover:pointer-events-auto group-hover:translate-y-0 group-data-[active=true]:pointer-events-auto group-data-[active=true]:translate-y-0`}
       >
         <p className="translate-y-2 text-[13px] leading-[1.55] text-white/95 opacity-0 transition-all delay-[120ms] duration-[450ms] group-hover:translate-y-0 group-hover:opacity-100 group-data-[active=true]:translate-y-0 group-data-[active=true]:opacity-100">
           {service.description}

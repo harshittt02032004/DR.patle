@@ -124,7 +124,7 @@ export default function Hero() {
           whileHover={{ y: -8, transition: { duration: 0.35 } }}
           className="relative mx-auto w-full max-w-md"
         >
-          <div className="glass animate-float-soft relative rounded-3xl p-6 shadow-lift transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(13,148,136,0.16)]">
+          <div className="glass animate-float-soft relative transform-gpu rounded-3xl p-6 shadow-lift transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(13,148,136,0.16)]">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-mist">
               <Image
                 src={DOCTOR.photo}
