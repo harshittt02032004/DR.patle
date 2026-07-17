@@ -58,7 +58,7 @@ export default function Navbar() {
       <div
         className={`pointer-events-auto relative mx-auto transition-all duration-[450ms] ${SPRING_EASE} ${
           scrolled
-            ? "mt-3 h-14 max-w-6xl rounded-full border border-line-light bg-cream/85 backdrop-blur-[20px] backdrop-saturate-[1.3] shadow-[0_8px_32px_rgba(15,40,38,0.1)]"
+            ? "mt-3 h-14 max-w-[82rem] rounded-full border border-line-light bg-cream/85 backdrop-blur-[20px] backdrop-saturate-[1.3] shadow-[0_8px_32px_rgba(15,40,38,0.1)]"
             : "mt-0 h-[68px] max-w-[110rem] rounded-none border border-transparent bg-cream/95"
         }`}
       >
