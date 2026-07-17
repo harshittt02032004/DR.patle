@@ -122,7 +122,7 @@ export default function Hero() {
           whileHover={{ y: -8, transition: { duration: 0.35 } }}
           className="relative mx-auto w-full max-w-md"
         >
-          <div className="glass animate-float-soft relative transform-gpu rounded-3xl p-6 shadow-lift transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(13,148,136,0.16)]">
+          <div className="glass animate-float-soft relative transform-gpu rounded-3xl p-4 shadow-lift transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(13,148,136,0.16)]">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-mist">
               <Image
                 src={DOCTOR.photo}
@@ -132,52 +132,30 @@ export default function Hero() {
                 sizes="(max-width: 1024px) 90vw, 400px"
                 className="object-cover object-[62%_center]"
               />
-            </div>
 
-            <div className="mt-5">
-              <h3 className="font-serif text-xl font-bold text-heading">
-                {DOCTOR.name}
-              </h3>
-              <p className="text-sm font-semibold text-teal">
-                {DOCTOR.title}
-              </p>
-              <p className="mt-1 text-xs text-muted">{DOCTOR.degree}</p>
-              <p className="text-xs text-muted">{DOCTOR.fellowship}</p>
-            </div>
-
-            <div className="mt-5 rounded-2xl border border-line bg-teal-pale p-4">
-              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal">
-                <Clock className="h-3.5 w-3.5" />
-                OPD Hours · {DOCTOR.opd.days}
-              </p>
-              <div className="mt-2 grid grid-cols-2 gap-2 text-sm text-body">
-                <div>
-                  <p className="text-xs text-faint">Afternoon</p>
-                  <p className="font-semibold">{DOCTOR.opd.afternoon}</p>
+              {/* everything the card used to stack below now overlays the photo */}
+              <div className="absolute inset-x-3 bottom-3 rounded-2xl border border-white/50 bg-white/80 p-4 backdrop-blur-md">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="font-serif text-lg font-bold leading-tight text-heading">
+                      {DOCTOR.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-teal">
+                      {DOCTOR.title}
+                    </p>
+                  </div>
+                  <p className="flex shrink-0 items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-xs font-bold text-heading">
+                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                    {DOCTOR.rating}
+                  </p>
                 </div>
-                <div>
-                  <p className="text-xs text-faint">Evening</p>
-                  <p className="font-semibold">{DOCTOR.opd.evening}</p>
+                <div className="mt-3 flex items-center gap-2 border-t border-line-light pt-3 text-xs font-medium text-body">
+                  <Clock className="h-3.5 w-3.5 shrink-0 text-teal" />
+                  <span>
+                    Mon–Sat · 12–4 &amp; 7–9 PM
+                    <span className="text-red-600"> · Sun closed</span>
+                  </span>
                 </div>
-              </div>
-              <p className="mt-2 text-xs font-semibold text-red-600">
-                {DOCTOR.opd.closed}
-              </p>
-            </div>
-
-            <div className="mt-4 flex items-center justify-between rounded-2xl border border-amber-400/10 bg-[#FFFBEB] p-4">
-              <div>
-                <p className="text-xs text-faint">Google Rating</p>
-                <p className="flex items-center gap-1 font-serif text-lg font-bold text-heading">
-                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  {DOCTOR.rating}/5
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-faint">Registration</p>
-                <p className="text-sm font-semibold text-teal">
-                  {DOCTOR.registrationShort}
-                </p>
               </div>
             </div>
           </div>
