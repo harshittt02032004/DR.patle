@@ -57,10 +57,10 @@ const TILES: Tile[] = [
     note: "Where you sit down with Dr. Patle — history first, examination second, verdict explained.",
   },
   {
-    type: "illustration",
-    src: "/images/gallery/xray.svg",
+    type: "photo",
+    src: "/images/gallery/xray-room.jpg",
     label: "Digital X-Ray Room",
-    note: "Imaging happens here, mid-consultation — you see your own films on screen.",
+    note: "X-ray is done here during the consultation itself.",
   },
 ];
 
@@ -149,8 +149,9 @@ export default function GalleryPage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-relaxed text-faint">
-            The physiotherapy centre photos are the real thing. The remaining
-            illustrations swap out for photographs as we shoot each room.
+            The X-ray room and physiotherapy centre photos are the real thing.
+            The remaining illustrations swap out for photographs as we shoot
+            each room.
           </p>
         </div>
       </section>
