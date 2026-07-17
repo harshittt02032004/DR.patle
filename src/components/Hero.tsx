@@ -120,6 +120,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           whileHover={{ y: -8, transition: { duration: 0.35 } }}
+          whileTap={{ y: -8, scale: 1.02, transition: { duration: 0.25 } }}
           className="relative mx-auto w-full max-w-md"
         >
           <div className="glass animate-float-soft relative transform-gpu rounded-3xl p-4 shadow-lift transition-shadow duration-300 hover:shadow-[0_20px_48px_rgba(13,148,136,0.16)]">
