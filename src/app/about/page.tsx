@@ -85,7 +85,7 @@ export default function AboutPage() {
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-line bg-cream p-5">
+              <div className="rounded-2xl border border-line bg-cream p-5 transition-all duration-300 ease-[cubic-bezier(.23,1,.32,1)] hover:-translate-y-1.5 hover:border-teal-lighter hover:shadow-lift active:-translate-y-1.5 active:scale-[1.02] active:border-teal-lighter active:shadow-lift">
                 <p className="text-xs font-semibold uppercase tracking-wide text-faint">
                   Qualifications
                 </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="rounded-2xl border border-line bg-cream p-5">
+                <div className="rounded-2xl border border-line bg-cream p-5 transition-all duration-300 ease-[cubic-bezier(.23,1,.32,1)] hover:-translate-y-1.5 hover:border-teal-lighter hover:shadow-lift active:-translate-y-1.5 active:scale-[1.02] active:border-teal-lighter active:shadow-lift">
                   <p className="text-xs font-semibold uppercase tracking-wide text-faint">
                     Registration
                   </p>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                     Healthcare Professional ID: {DOCTOR.hprId}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-line bg-teal-pale p-5">
+                <div className="rounded-2xl border border-line bg-teal-pale p-5 transition-all duration-300 ease-[cubic-bezier(.23,1,.32,1)] hover:-translate-y-1.5 hover:border-teal-lighter hover:shadow-lift active:-translate-y-1.5 active:scale-[1.02] active:border-teal-lighter active:shadow-lift">
                   <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-teal">
                     <Clock className="h-3.5 w-3.5" />
                     OPD · {DOCTOR.opd.days}
