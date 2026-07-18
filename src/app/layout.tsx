@@ -47,11 +47,20 @@ export const metadata: Metadata = {
     siteName: DOCTOR.clinicName,
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${DOCTOR.name} — ${DOCTOR.title}, ${DOCTOR.clinicName}, Adhartal, Jabalpur`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${DOCTOR.name} | ${DOCTOR.title} in Jabalpur`,
     description: `Expert bone & joint care at ${DOCTOR.clinicName}, Adhartal, Jabalpur.`,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -60,6 +69,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+};
+
+export const viewport = {
+  themeColor: "#0D9488",
 };
 
 export default function RootLayout({
@@ -76,6 +89,12 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-teal focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to content
+        </a>
         <SmoothScroll />
         {/* Navbar lives OUTSIDE the page-transition wrapper (app/template.tsx):
             page animations can never move it, and it doesn't re-mount between
