@@ -91,6 +91,16 @@ body {
   }
 }
 
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
 @layer utilities {
   .gradient-text {
     background-image: linear-gradient(

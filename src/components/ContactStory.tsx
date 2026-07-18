@@ -5,7 +5,6 @@ import {
   Clock,
   MapPin,
   MessageCircle,
-  Navigation,
   Phone,
   PhoneCall,
   ScanLine,
@@ -14,12 +13,51 @@ import { DOCTOR } from "@/lib/constants";
 
 const EASE = [0.23, 1, 0.32, 1] as const;
 
-const card = (delay: number) => ({
-  initial: { opacity: 0, x: -28 },
-  whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.65, ease: EASE, delay },
-});
+/* Scale Pop reveal: 0.85 → 1, staggered 100ms per card.
+   Delay lives on whileInView only, so hover/tap respond instantly. */
+function PopCard({
+  number,
+  delay,
+  children,
+}: {
+  number: string;
+  delay: number;
+  children: React.ReactNode;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.5, ease: EASE, delay },
+      }}
+      viewport={{ once: true, amount: 0.1 }}
+      whileHover={{ scale: 1.02, x: 4 }}
+      whileTap={{ scale: 1.02 }}
+      transition={{ duration: 0.35, ease: EASE }}
+      className="group relative rounded-2xl border border-line bg-white/90 px-[22px] py-[18px] shadow-[0_2px_8px_rgba(0,0,0,0.03)] backdrop-blur-[16px] transition-[background-color,border-color,box-shadow] duration-500 ease-[cubic-bezier(.23,1,.32,1)] hover:border-teal/15 hover:bg-white/[0.98] hover:shadow-[0_16px_40px_rgba(13,148,136,0.12)]"
+    >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-3.5 top-3 select-none text-[32px] font-black leading-none text-teal/[0.03] transition-colors duration-[400ms] group-hover:text-teal/[0.08]"
+      >
+        {number}
+      </span>
+      {children}
+    </motion.div>
+  );
+}
+
+/* Circle icon that floods teal (icon inverts to white) when the card is hovered/tapped */
+function IconCircle({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal/[0.06] text-teal transition-all duration-[400ms] ease-[cubic-bezier(.23,1,.32,1)] group-hover:bg-teal group-hover:text-white group-hover:shadow-[0_4px_12px_rgba(13,148,136,0.2)] group-active:bg-teal group-active:text-white"
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function ContactStory() {
   const { lat, lng } = DOCTOR.coordinates;
@@ -43,8 +81,17 @@ export default function ContactStory() {
       />
 
       <div className="section-container relative py-20 md:py-28">
-        <div className="flex max-w-md flex-col gap-5">
-          <motion.div {...card(0)}>
+        <div className="flex w-full max-w-[380px] flex-col gap-3.5 max-md:max-w-none">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.5, ease: EASE },
+            }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="mb-1.5"
+          >
             <span className="inline-block rounded-full bg-teal-mint px-4 py-1.5 text-xs font-bold uppercase tracking-[3px] text-heading">
               Visit Us
             </span>
@@ -57,123 +104,108 @@ export default function ContactStory() {
             </p>
           </motion.div>
 
-          <motion.div
-            {...card(0.15)}
-            className="rounded-2xl border border-white/60 bg-white/85 p-6 shadow-lift backdrop-blur-md"
-          >
+          <PopCard number="01" delay={0}>
             <div className="flex gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal text-white">
-                <MapPin className="h-5 w-5" />
-              </div>
+              <IconCircle>
+                <MapPin className="h-[18px] w-[18px]" />
+              </IconCircle>
               <div>
-                <p className="text-sm font-bold text-heading">
+                <p className="mb-1 text-sm font-bold text-heading">
                   {DOCTOR.clinicName}
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-body">
+                <p className="text-xs leading-[1.6] text-muted">
                   {DOCTOR.clinicAddress}
                 </p>
                 <a
                   href={directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-teal hover:text-teal-dark"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-teal transition-[gap] duration-300 hover:text-teal-dark group-hover:gap-2"
                 >
-                  <Navigation className="h-4 w-4" />
-                  Get Directions
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
+                  Get Directions <span>→</span>
                 </a>
               </div>
             </div>
-          </motion.div>
+          </PopCard>
 
-          <motion.div
-            {...card(0.3)}
-            className="rounded-2xl border border-white/60 bg-white/85 p-6 shadow-lift backdrop-blur-md"
-          >
+          <PopCard number="02" delay={0.1}>
             <div className="flex gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                <Clock className="h-5 w-5" />
-              </div>
+              <IconCircle>
+                <Clock className="h-[18px] w-[18px]" />
+              </IconCircle>
               <div>
-                <p className="text-sm font-bold text-heading">
+                <p className="mb-1 text-sm font-bold text-heading">
                   Come during OPD hours
                 </p>
-                <p className="mt-1 text-sm text-body">
+                <p className="text-xs leading-[1.6] text-muted">
                   Afternoon: {DOCTOR.opd.afternoon}
                 </p>
-                <p className="text-sm text-body">
+                <p className="text-xs leading-[1.6] text-muted">
                   Evening: {DOCTOR.opd.evening}
                 </p>
-                <p className="mt-1.5 text-xs text-muted">
-                  {DOCTOR.opd.days} ·{" "}
-                  <span className="font-semibold text-red-600">
-                    {DOCTOR.opd.closed}
-                  </span>
+                <p className="text-xs leading-[1.6] text-muted">
+                  {DOCTOR.opd.days}
                 </p>
+                <span className="mt-1 inline-block animate-[subtle-pulse_2s_ease-in-out_infinite] text-[11px] font-bold text-red-600">
+                  {DOCTOR.opd.closed}
+                </span>
               </div>
             </div>
-          </motion.div>
+          </PopCard>
 
-          <motion.div
-            {...card(0.45)}
-            className="rounded-2xl border border-white/60 bg-white/85 p-6 shadow-lift backdrop-blur-md"
-          >
+          <PopCard number="03" delay={0.2}>
             <div className="flex gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                <Phone className="h-5 w-5" />
-              </div>
+              <IconCircle>
+                <Phone className="h-[18px] w-[18px]" />
+              </IconCircle>
               <div>
-                <p className="text-sm font-bold text-heading">
+                <p className="mb-1 text-sm font-bold text-heading">
                   Rather talk to someone first?
                 </p>
-                <div className="mt-2 flex flex-col gap-1.5">
+                <div className="flex flex-col gap-1">
                   <a
                     href={`tel:${DOCTOR.phoneRaw}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-teal hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:underline"
                   >
-                    <Phone className="h-3.5 w-3.5" /> {DOCTOR.phone}
+                    <Phone className="h-3 w-3" /> {DOCTOR.phone}
                   </a>
                   <a
                     href={`tel:${DOCTOR.landlineRaw}`}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-body hover:text-teal"
+                    className="inline-flex items-center gap-1.5 text-xs leading-[1.6] text-muted hover:text-teal"
                   >
-                    <PhoneCall className="h-3.5 w-3.5" /> {DOCTOR.landline}{" "}
+                    <PhoneCall className="h-3 w-3" /> {DOCTOR.landline}{" "}
                     (Landline)
                   </a>
-                  <a
-                    href={`https://wa.me/${DOCTOR.whatsappNumber}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-body hover:text-teal"
-                  >
-                    <MessageCircle className="h-3.5 w-3.5" /> WhatsApp us
-                  </a>
                 </div>
+                <a
+                  href={`https://wa.me/${DOCTOR.whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-teal transition-[gap] duration-300 hover:text-teal-dark group-hover:gap-2"
+                >
+                  <MessageCircle className="h-3 w-3" /> WhatsApp us{" "}
+                  <span>→</span>
+                </a>
               </div>
             </div>
-          </motion.div>
+          </PopCard>
 
-          <motion.div
-            {...card(0.6)}
-            className="rounded-2xl border border-white/60 bg-white/85 p-6 shadow-lift backdrop-blur-md"
-          >
+          <PopCard number="04" delay={0.3}>
             <div className="flex gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                <ScanLine className="h-5 w-5" />
-              </div>
+              <IconCircle>
+                <ScanLine className="h-[18px] w-[18px]" />
+              </IconCircle>
               <div>
-                <p className="text-sm font-bold text-heading">
+                <p className="mb-1 text-sm font-bold text-heading">
                   Once you&apos;re here
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-body">
+                <p className="text-xs leading-[1.6] text-muted">
                   {DOCTOR.facilities.join(" and ")} are in-house — most visits
                   finish with a diagnosis and a plan, not a referral slip.
                 </p>
               </div>
             </div>
-          </motion.div>
+          </PopCard>
         </div>
       </div>
     </section>
