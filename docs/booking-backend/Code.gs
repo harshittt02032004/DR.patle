@@ -28,8 +28,9 @@ var CONFIG = {
   // Name of the tab where bookings are stored (auto-created)
   SHEET_NAME: "Appointments",
 
-  // Get an email for every new booking. Leave "" to disable.
-  NOTIFY_EMAIL: "",
+  // Get an email for every new booking.
+  // "me" = the Google account that owns this sheet. Leave "" to disable.
+  NOTIFY_EMAIL: "me",
 
   // Anti-abuse limits
   DUPLICATE_WINDOW_SECONDS: 600, // same mobile blocked for 10 min
@@ -118,7 +119,10 @@ function doPost(e) {
     if (CONFIG.NOTIFY_EMAIL) {
       try {
         MailApp.sendEmail({
-          to: CONFIG.NOTIFY_EMAIL,
+          to:
+            CONFIG.NOTIFY_EMAIL === "me"
+              ? Session.getEffectiveUser().getEmail()
+              : CONFIG.NOTIFY_EMAIL,
           subject: "New appointment request — " + name,
           body:
             "Name: " + name +

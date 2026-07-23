@@ -32,8 +32,8 @@ export const DOCTOR = {
   rating: 4.8,
   reviewCount: 9,
   coordinates: {
-    lat: 23.198766,
-    lng: 79.9466939,
+    lat: 23.1959194,
+    lng: 79.9431354,
   },
 };
 
