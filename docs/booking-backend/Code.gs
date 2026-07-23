@@ -99,8 +99,10 @@ function doPost(e) {
     lock.waitLock(10000); // wait max 10s for our turn
     try {
       var sheet = getOrCreateSheet();
+      var now = new Date();
       sheet.appendRow([
-        new Date(),          // Received at
+        Utilities.formatDate(now, "Asia/Kolkata", "yyyy-MM-dd"), // Received date
+        Utilities.formatDate(now, "Asia/Kolkata", "hh:mm a"),    // Received time
         name,                // already formula-guarded by clean()
         "'" + mobile,        // leading ' keeps long numbers as text
         date,
@@ -184,9 +186,9 @@ function getOrCreateSheet() {
   if (!sheet) {
     sheet = ss.insertSheet(CONFIG.SHEET_NAME);
     sheet
-      .getRange(1, 1, 1, 8)
+      .getRange(1, 1, 1, 9)
       .setValues([[
-        "Received At", "Name", "Mobile", "Preferred Date",
+        "Received Date", "Received Time", "Name", "Mobile", "Preferred Date",
         "OPD Slot", "Visit Type", "Concern", "Status",
       ]])
       .setFontWeight("bold")
