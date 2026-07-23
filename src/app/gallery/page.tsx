@@ -39,10 +39,10 @@ const TILES: Tile[] = [
     note: "Hand-exercise boards and therapy tables — the fine-motor side of rehabilitation, for wrists, hands, and fingers.",
   },
   {
-    type: "illustration",
-    src: "/images/gallery/clinic-exterior.svg",
+    type: "photo",
+    src: "/images/gallery/clinic-exterior.jpg",
     label: "The Clinic on Main Road",
-    note: "Right on Main Road, Adhartal — look for the board, you can't miss it.",
+    note: "Right on Main Road, Adhartal — look for the glowing board, you can't miss it.",
   },
   {
     type: "photo",
@@ -138,8 +138,8 @@ export default function GalleryPage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-xl text-center text-sm leading-relaxed text-faint">
-            The X-ray room and physiotherapy centre photos are the real thing.
-            The clinic-front illustration swaps out for a photograph soon.
+            Every photo here is the real clinic — this is what you&apos;ll find
+            when you visit.
           </p>
         </div>
       </section>
