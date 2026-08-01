@@ -19,6 +19,7 @@ export const DOCTOR = {
   phone: "+91 93039 44402",
   phoneRaw: "+919303944402",
   whatsappNumber: "919303944402",
+  email: "patlehealthcare@gmail.com",
   registration: "MP Medical Council — Reg. No. 4172",
   registrationShort: "MPMC Reg. No. 4172",
   hprId: "71-4611-1664-8583",

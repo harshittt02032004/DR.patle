@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BadgeCheck, MapPin, Navigation, Phone } from "lucide-react";
+import { BadgeCheck, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { DOCTOR } from "@/lib/constants";
 
 const LINKS = [
@@ -77,6 +77,13 @@ export default function Footer() {
             >
               <Phone className="mt-0.5 h-4 w-4 shrink-0" />
               {DOCTOR.landline}
+            </a>
+            <a
+              href={`mailto:${DOCTOR.email}`}
+              className="flex items-start gap-2 text-sm text-ondark-muted transition-colors hover:text-teal-light"
+            >
+              <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+              {DOCTOR.email}
             </a>
             <p className="flex items-start gap-2 text-sm text-ondark-muted">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />

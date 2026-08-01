@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Clock,
+  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -192,6 +193,13 @@ export default function ContactStory() {
                     (Landline)
                   </a>
                 </div>
+                <a
+                  href={`mailto:${DOCTOR.email}`}
+                  className="mt-1.5 inline-flex items-center gap-1.5 text-xs leading-[1.6] text-muted hover:text-teal"
+                >
+                  <Mail className="h-3 w-3" /> {DOCTOR.email}
+                </a>
+                <br />
                 <a
                   href={`https://wa.me/${DOCTOR.whatsappNumber}`}
                   target="_blank"
