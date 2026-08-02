@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="section-container mt-6 flex flex-col items-center justify-between gap-3 text-xs sm:flex-row">
+      <div className="section-container mt-6 flex justify-center text-xs">
         <p className="text-ondark-muted/70">
           &copy; {new Date().getFullYear()} {DOCTOR.clinicName}. All rights
           reserved. ·{" "}
@@ -121,7 +121,6 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </p>
-        <p className="text-teal-light">Website by Pop Up Local</p>
       </div>
     </footer>
   );
