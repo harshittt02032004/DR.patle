@@ -72,13 +72,6 @@ export default function Footer() {
               {DOCTOR.phone}
             </a>
             <a
-              href={`tel:${DOCTOR.landlineRaw}`}
-              className="flex items-start gap-2 text-sm text-ondark-muted transition-colors hover:text-teal-light"
-            >
-              <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-              {DOCTOR.landline}
-            </a>
-            <a
               href={`mailto:${DOCTOR.email}`}
               className="flex items-start gap-2 text-sm text-ondark-muted transition-colors hover:text-teal-light"
             >

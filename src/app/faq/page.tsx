@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     question: "How do I book an appointment with Dr. Patle?",
-    answer: `You can book online through the Book Appointment page on this website — our team will call you back to confirm your slot. You can also call the clinic directly at ${DOCTOR.phone} (mobile) or ${DOCTOR.landline} (landline) during OPD hours.`,
+    answer: `You can book online through the Book Appointment page on this website — our team will call you back to confirm your slot. You can also call the clinic directly at ${DOCTOR.phone} during OPD hours.`,
   },
   {
     question: "What are the OPD timings?",

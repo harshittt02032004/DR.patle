@@ -54,7 +54,7 @@ const SECTIONS = [
   {
     title: "Your Rights & Contact",
     body: [
-      `To ask about, correct, or request deletion of information you submitted through this website, contact the clinic directly: ${DOCTOR.clinicName}, ${DOCTOR.clinicAddress}. Phone: ${DOCTOR.phone} (mobile) or ${DOCTOR.landline} (landline) during OPD hours.`,
+      `To ask about, correct, or request deletion of information you submitted through this website, contact the clinic directly: ${DOCTOR.clinicName}, ${DOCTOR.clinicAddress}. Phone: ${DOCTOR.phone} during OPD hours.`,
     ],
   },
 ];

@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: `Contact ${DOCTOR.clinicName} | Adhartal, Jabalpur`,
-  description: `Contact ${DOCTOR.clinicName}: ${DOCTOR.clinicAddress}. Mobile ${DOCTOR.phone}, Landline ${DOCTOR.landline}. OPD ${DOCTOR.opd.days}, ${DOCTOR.opd.afternoon} and ${DOCTOR.opd.evening}.`,
+  description: `Contact ${DOCTOR.clinicName}: ${DOCTOR.clinicAddress}. Phone ${DOCTOR.phone}. OPD ${DOCTOR.opd.days}, ${DOCTOR.opd.afternoon} and ${DOCTOR.opd.evening}.`,
   alternates: { canonical: `${SITE_URL}/contact` },
 };
 

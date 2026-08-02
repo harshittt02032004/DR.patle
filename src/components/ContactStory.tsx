@@ -7,7 +7,6 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  PhoneCall,
   ScanLine,
 } from "lucide-react";
 import { DOCTOR } from "@/lib/constants";
@@ -184,13 +183,6 @@ export default function ContactStory() {
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:underline"
                   >
                     <Phone className="h-3 w-3" /> {DOCTOR.phone}
-                  </a>
-                  <a
-                    href={`tel:${DOCTOR.landlineRaw}`}
-                    className="inline-flex items-center gap-1.5 text-xs leading-[1.6] text-muted hover:text-teal"
-                  >
-                    <PhoneCall className="h-3 w-3" /> {DOCTOR.landline}{" "}
-                    (Landline)
                   </a>
                 </div>
                 <a

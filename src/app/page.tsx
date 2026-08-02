@@ -72,13 +72,6 @@ export default function Home() {
                   <Phone className="h-5 w-5 text-teal-light" />
                   {DOCTOR.phone}
                 </a>
-                <a
-                  href={`tel:${DOCTOR.landlineRaw}`}
-                  className="mt-2 flex items-center gap-3 text-sm font-medium text-ondark hover:text-teal-light"
-                >
-                  <Phone className="h-4 w-4 text-teal-light" />
-                  {DOCTOR.landline} (Landline)
-                </a>
               </div>
             </div>
           </div>
