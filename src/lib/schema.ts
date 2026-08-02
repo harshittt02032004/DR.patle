@@ -1,6 +1,6 @@
 import { DOCTOR } from "./constants";
 
-export const SITE_URL = "https://www.drsushilpatle.com";
+export const SITE_URL = "https://www.patlehealthcare.com";
 
 export const jsonLd = {
   "@context": "https://schema.org",
