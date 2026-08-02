@@ -140,10 +140,65 @@ function doPost(e) {
       }
     }
 
+    // WhatsApp acknowledgment to the patient (only if configured)
+    try {
+      sendWhatsAppAck(name, mobile, date, timeSlot);
+    } catch (waErr) {
+      // Never fail a booking because WhatsApp failed
+    }
+
     return jsonReply({ ok: true });
   } catch (err) {
     return jsonReply({ ok: false, error: "server_error" });
   }
+}
+
+// ------------- WHATSAPP ACK (Meta Cloud API) ----------------
+/**
+ * Sends "your booking has been received" to the patient's WhatsApp.
+ * Credentials live in Script Properties (Project Settings → Script
+ * Properties), NOT in this code:
+ *   WA_TOKEN           — Meta access token
+ *   WA_PHONE_NUMBER_ID — sender's phone number ID from API Setup
+ *   WA_TEMPLATE        — approved template name (default: booking_received)
+ * If the properties are missing, this does nothing — bookings
+ * keep working exactly as before.
+ */
+function sendWhatsAppAck(name, mobile, date, timeSlot) {
+  var props = PropertiesService.getScriptProperties();
+  var token = props.getProperty("WA_TOKEN");
+  var phoneId = props.getProperty("WA_PHONE_NUMBER_ID");
+  if (!token || !phoneId) return; // not configured yet
+  var template = props.getProperty("WA_TEMPLATE") || "booking_received";
+
+  UrlFetchApp.fetch(
+    "https://graph.facebook.com/v20.0/" + phoneId + "/messages",
+    {
+      method: "post",
+      contentType: "application/json",
+      headers: { Authorization: "Bearer " + token },
+      muteHttpExceptions: true, // never throw into the booking flow
+      payload: JSON.stringify({
+        messaging_product: "whatsapp",
+        to: "91" + mobile,
+        type: "template",
+        template: {
+          name: template,
+          language: { code: "en" },
+          components: [
+            {
+              type: "body",
+              parameters: [
+                { type: "text", text: name },
+                { type: "text", text: date },
+                { type: "text", text: timeSlot },
+              ],
+            },
+          ],
+        },
+      }),
+    }
+  );
 }
 
 /** Friendly response if someone opens the URL in a browser. */
