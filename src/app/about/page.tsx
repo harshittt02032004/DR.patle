@@ -77,12 +77,10 @@ export default function AboutPage() {
               {DOCTOR.bio}
             </p>
             <p className="mt-4 text-base leading-relaxed text-body">
-              This combination is uncommon: most patients with joint problems
-              have to choose between a surgeon&apos;s perspective and a
-              physician&apos;s. At {DOCTOR.clinicName}, both live in the same
-              consultation room — which means the recommendation you receive is
-              based on what your joint actually needs, not on which specialist
-              you happened to see first.
+              At most clinics, you have to choose between a bone surgeon and a
+              joint physician. At {DOCTOR.clinicName}, you get both in the same
+              room — so the advice you receive depends on what your joint
+              actually needs, not on which doctor you happened to visit first.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">

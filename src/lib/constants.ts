@@ -11,7 +11,7 @@ export const DOCTOR = {
   title: "Consultant Orthopaedic Surgeon",
   tagline: "Expert Bone & Joint Care",
   photo: "/images/doctor.png",
-  bio: "Dr. Sushil Kumar Patle is a Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal, Jabalpur. Trained with an M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM), he also holds a Fellowship in Rheumatology — an uncommon combination that lets him treat both the injuries that need a surgeon and the arthritis that needs a physician. The clinic runs its own digital X-ray and physiotherapy centre, so most patients are diagnosed, treated, and rehabilitated at one address.",
+  bio: "Dr. Sushil Kumar Patle is a Consultant Orthopaedic Surgeon at Patle Health Care Center, Adhartal, Jabalpur. He is trained with an M.B.B.S., D.Ortho, and M.Ch. Ortho (USAIM), and also holds a Fellowship in Rheumatology. This means he can treat both bone injuries that need surgery and joint problems like arthritis that need medicines. The clinic has its own digital X-ray and physiotherapy centre, so most patients get their check-up, treatment, and recovery care at one place.",
   clinicName: "Patle Health Care Center",
   clinicAddress: "Main Road, Adhartal, Jabalpur, M.P. 482004",
   landline: "0761-4018137",
