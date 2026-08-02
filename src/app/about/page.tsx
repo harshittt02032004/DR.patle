@@ -77,6 +77,16 @@ export default function AboutPage() {
               {DOCTOR.bio}
             </p>
             <p className="mt-4 text-base leading-relaxed text-body">
+              He learned his craft under two doctors who each went on to lead
+              Indian orthopaedics as{" "}
+              <span className="font-semibold text-heading">
+                President of the Indian Orthopaedic Association
+              </span>{" "}
+              — Dr. H. K. T. Raza, and Dr. Sudhir Babhulkar of Nagpur. Training
+              under teachers of that level shaped the way he examines, treats,
+              and explains.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-body">
               At most clinics, you have to choose between a bone surgeon and a
               joint physician. At {DOCTOR.clinicName}, you get both in the same
               room — so the advice you receive depends on what your joint
