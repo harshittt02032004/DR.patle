@@ -45,7 +45,7 @@ export const jsonLd = {
       name: DOCTOR.clinicName,
       image: `${SITE_URL}/og-image.jpg`,
       url: SITE_URL,
-      telephone: [DOCTOR.phoneRaw],
+      telephone: [DOCTOR.phoneRaw, DOCTOR.altPhoneRaw],
       email: DOCTOR.email,
       priceRange: "₹₹",
       address: {

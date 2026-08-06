@@ -14,7 +14,9 @@ const LINKS = [
 
 export default function Footer() {
   const { lat, lng } = DOCTOR.coordinates;
-  const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}&hl=en&z=15&output=embed`;
+  const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}+(${encodeURIComponent(
+    DOCTOR.clinicName
+  )})&hl=en&z=15&output=embed`;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
   return (
@@ -70,6 +72,13 @@ export default function Footer() {
             >
               <Phone className="mt-0.5 h-4 w-4 shrink-0" />
               {DOCTOR.phone}
+            </a>
+            <a
+              href={`tel:${DOCTOR.altPhoneRaw}`}
+              className="flex items-start gap-2 text-sm text-ondark-muted transition-colors hover:text-teal-light"
+            >
+              <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+              {DOCTOR.altPhone}
             </a>
             <a
               href={`mailto:${DOCTOR.email}`}

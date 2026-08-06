@@ -61,7 +61,9 @@ function IconCircle({ children }: { children: React.ReactNode }) {
 
 export default function ContactStory() {
   const { lat, lng } = DOCTOR.coordinates;
-  const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}&hl=en&z=16&output=embed`;
+  const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}+(${encodeURIComponent(
+    DOCTOR.clinicName
+  )})&hl=en&z=16&output=embed`;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
   return (
@@ -183,6 +185,12 @@ export default function ContactStory() {
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:underline"
                   >
                     <Phone className="h-3 w-3" /> {DOCTOR.phone}
+                  </a>
+                  <a
+                    href={`tel:${DOCTOR.altPhoneRaw}`}
+                    className="inline-flex items-center gap-1.5 text-xs leading-[1.6] text-muted hover:text-teal"
+                  >
+                    <Phone className="h-3 w-3" /> {DOCTOR.altPhone} (Alternate)
                   </a>
                 </div>
                 <a

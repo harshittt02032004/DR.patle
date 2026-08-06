@@ -18,6 +18,8 @@ export const DOCTOR = {
   landlineRaw: "07614018137",
   phone: "0761-4018137",
   phoneRaw: "+917614018137",
+  altPhone: "+91 74151 67448",
+  altPhoneRaw: "+917415167448",
   whatsappNumber: "919303944402",
   email: "patlehealthcare@gmail.com",
   registration: "MP Medical Council — Reg. No. 4172",
