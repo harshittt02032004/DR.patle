@@ -14,7 +14,8 @@ export default function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     lenis = new Lenis({
-      lerp: 0.11,
+      // lower lerp = longer, silkier glide after each wheel tick
+      lerp: 0.085,
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
       // touch devices keep native momentum scrolling
