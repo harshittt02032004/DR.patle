@@ -153,7 +153,7 @@ export default function Hero() {
                 <div className="mt-3 flex items-center gap-2 border-t border-line-light pt-3 text-xs font-medium text-body">
                   <Clock className="h-3.5 w-3.5 shrink-0 text-teal" />
                   <span>
-                    Mon–Sat · 12–4 &amp; 7–9 PM
+                    Mon–Sat · 12–4 &amp; 6–9 PM
                     <span className="text-red-600"> · Sun closed</span>
                   </span>
                 </div>

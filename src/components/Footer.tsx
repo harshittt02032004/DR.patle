@@ -38,7 +38,7 @@ export default function Footer() {
             {DOCTOR.registration}
           </p>
           <p className="mt-2 text-xs text-ondark-muted">
-            OPD: {DOCTOR.opd.days} · 12–4 PM &amp; 7–9 PM ·{" "}
+            OPD: {DOCTOR.opd.days} · 12–4 PM &amp; 6–9 PM ·{" "}
             <span className="font-medium text-red-400">{DOCTOR.opd.closed}</span>
           </p>
         </div>

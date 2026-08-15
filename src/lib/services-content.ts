@@ -302,7 +302,7 @@ export const SERVICES_CONTENT: ServiceContent[] = [
       {
         question: "Can I walk in just for an X-ray?",
         answer:
-          "X-rays here are done as part of an orthopaedic consultation — Dr. Patle examines you first and images what the examination indicates. That's deliberate: an X-ray without clinical context often answers the wrong question. Come during OPD hours (12 Noon–4 PM or 7–9 PM, Monday to Saturday) and both happen together.",
+          "X-rays here are done as part of an orthopaedic consultation — Dr. Patle examines you first and images what the examination indicates. That's deliberate: an X-ray without clinical context often answers the wrong question. Come during OPD hours (12 Noon–4 PM or 6–9 PM, Monday to Saturday) and both happen together.",
       },
       {
         question: "Is the radiation from an X-ray something to worry about?",

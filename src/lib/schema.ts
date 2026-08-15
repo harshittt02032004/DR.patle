@@ -85,7 +85,7 @@ export const jsonLd = {
             "Friday",
             "Saturday",
           ],
-          opens: "19:00",
+          opens: "18:00",
           closes: "21:00",
         },
       ],

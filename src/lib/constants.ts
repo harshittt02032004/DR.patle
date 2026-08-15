@@ -27,7 +27,7 @@ export const DOCTOR = {
   hprId: "71-4611-1664-8583",
   opd: {
     afternoon: "12:00 Noon – 4:00 PM",
-    evening: "7:00 PM – 9:00 PM",
+    evening: "6:00 PM – 9:00 PM",
     days: "Monday – Saturday",
     closed: "Sunday Closed",
   },

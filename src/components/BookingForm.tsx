@@ -56,7 +56,8 @@ const SLOTS = [
     label: "Evening OPD",
     time: DOCTOR.opd.evening,
     icon: Moon,
-    utc: ["T133000Z", "T153000Z"],
+    // 18:00–21:00 IST expressed in UTC
+    utc: ["T123000Z", "T153000Z"],
   },
 ];
 
